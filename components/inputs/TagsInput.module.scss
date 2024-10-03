@@ -1,0 +1,18 @@
+.input {
+	border: 0px solid transparent;
+	border-radius: var(--mantine-radius-sm);
+	background-color: light-dark(var(--mantine-color-pri-light), var(--mantine-color-gray-light));
+}
+
+.label {
+	margin-left: var(--mantine-spacing-lg);
+}
+
+.description {
+	margin-left: var(--mantine-spacing-lg);
+	color: light-dark(inherit, var(--mantine-color-dark-0));
+}
+
+.error {
+	margin-left: var(--mantine-spacing-lg);
+}

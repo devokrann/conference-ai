@@ -1,0 +1,23 @@
+.card {
+	background-color: light-dark(var(--mantine-color-sec-6), var(--mantine-color-body));
+	color: light-dark(var(--mantine-color-pri-6), var(--mantine-color-white));
+	font-weight: 500;
+	padding: calc(var(--mantine-spacing-xs) / 1);
+	font-size: var(--mantine-font-size-xs);
+	max-width: fit-content;
+	transition: 0.25s all ease;
+
+	&:hover {
+		background-color: light-dark(var(--mantine-color-body), var(--mantine-color-pri-6));
+	}
+}
+
+.image {
+	width: 48px;
+	border-radius: 99px;
+}
+
+.occupation {
+	font-size: 10px !important;
+	color: light-dark(var(--mantine-color-dark-6), var(--mantine-color-sec-6));
+}
