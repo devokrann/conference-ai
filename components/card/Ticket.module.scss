@@ -1,0 +1,13 @@
+.card {
+	background-color: light-dark(var(--mantine-color-sec-light), var(--mantine-color-dark-6));
+	border-radius: var(--mantine-radius-md);
+	border: 2px solid light-dark(var(--mantine-color-sec-6), transparent);
+	padding: var(--mantine-spacing-xl);
+	box-shadow: var(--mantine-shadow-xs);
+	height: 100%;
+	transition: 0.25s all ease;
+
+	&:hover {
+		border: 2px solid light-dark(var(--mantine-color-pri-6), var(--mantine-color-sec-6));
+	}
+}
