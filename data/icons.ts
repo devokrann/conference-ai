@@ -1,22 +1,22 @@
-import image from "@src/assets/images";
+import iconAssets from "@/assets/icons";
 
 const icons = {
 	social: [
 		{
 			label: "facebook",
-			icon: image.icon.social.facebook,
+			icon: iconAssets.social.facebook,
 		},
 		{
 			label: "twitter",
-			icon: image.icon.social.twitter,
+			icon: iconAssets.social.twitter,
 		},
 		{
 			label: "instagram",
-			icon: image.icon.social.instagram,
+			icon: iconAssets.social.instagram,
 		},
 		{
 			label: "linkedin",
-			icon: image.icon.social.linkedin,
+			icon: iconAssets.social.linkedin,
 		},
 	],
 };

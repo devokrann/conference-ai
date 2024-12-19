@@ -24,9 +24,9 @@ import { IMaskInput } from "react-imask";
 // icons
 import { IconCheck, IconX } from "@tabler/icons-react";
 
-import utility from "@src/utilities";
+import utility from "@/utilities";
 
-import { postLogin } from "@src/apis/user/post";
+import { postLogin } from "@/apis/user/post";
 
 export default function Login() {
 	const [submitted, setSubmitted] = useState(false);

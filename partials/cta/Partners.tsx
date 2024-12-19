@@ -1,9 +1,9 @@
 import React from "react";
 
-import Carousel from "@src/components/carousel";
-import Layout from "@src/layouts";
+import Carousel from "@/components/carousel";
+import Layout from "@/layouts";
 
-import data from "@src/data";
+import data from "@/data";
 
 export default function Partners() {
 	return (

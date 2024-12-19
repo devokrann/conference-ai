@@ -2,7 +2,7 @@ import React from "react";
 
 import { Card, Group, Image, Stack, Text } from "@mantine/core";
 
-import { typeSpeaker } from "@src/types/people";
+import { typeSpeaker } from "@/types/people";
 
 import classes from "./Agenda.module.scss";
 

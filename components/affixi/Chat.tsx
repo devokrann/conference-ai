@@ -3,10 +3,10 @@ import React from "react";
 import { Affix, Anchor, Box, Image, Transition } from "@mantine/core";
 import { useMediaQuery, useWindowScroll } from "@mantine/hooks";
 
-import Partial from "@src/partials";
+import Partial from "@/partials";
 
 import classes from "./Chat.module.scss";
-import image from "@src/assets/images";
+import image from "@/assets/images";
 
 export default function Chat() {
 	const touch = useMediaQuery("(max-width: 62em)");

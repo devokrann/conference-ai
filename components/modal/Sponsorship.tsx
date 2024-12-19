@@ -1,7 +1,7 @@
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Button, Text } from "@mantine/core";
 
-import Partial from "@src/partials";
+import Partial from "@/partials";
 
 export default function Sponsorship({ label }: { label: string }) {
 	const [opened, { open, close }] = useDisclosure(false);

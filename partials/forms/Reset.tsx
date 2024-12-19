@@ -10,9 +10,9 @@ import { IconCheck, IconX } from "@tabler/icons-react";
 
 import { IMaskInput } from "react-imask";
 
-import utility from "@src/utilities";
+import utility from "@/utilities";
 
-import postEmail from "@src/apis/postEmail";
+import postEmail from "@/apis/postEmail";
 
 export default function Reset() {
 	const [submitted, setSubmitted] = useState(false);

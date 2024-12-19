@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 import { Accordion, Anchor, Center, Container, Divider, Grid, Group, Stack, Text } from "@mantine/core";
 
-import { typeSpeaker } from "@src/types/people";
+import { typeSpeaker } from "@/types/people";
 
 import card from "../card";
 
 import clases from "./Program.module.scss";
-import hook from "@src/hooks";
+import hook from "@/hooks";
 
 export default function Program({
 	data,

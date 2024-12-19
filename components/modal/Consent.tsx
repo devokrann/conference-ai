@@ -1,6 +1,6 @@
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Button, Stack, Title, Text, Image, List, Group, Grid, Anchor } from "@mantine/core";
-import image from "@src/assets/images";
+import image from "@/assets/images";
 
 export default function Consent() {
 	const [opened, { open, close }] = useDisclosure(false);

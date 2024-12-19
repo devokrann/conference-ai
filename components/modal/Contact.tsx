@@ -3,7 +3,7 @@ import React from "react";
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import { Modal, Button } from "@mantine/core";
 
-import Partial from "@src/partials";
+import Partial from "@/partials";
 
 import classes from "./Contact.module.scss";
 

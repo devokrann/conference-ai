@@ -10,8 +10,8 @@ import { IconCheck, IconX } from "@tabler/icons-react";
 
 import { IMaskInput } from "react-imask";
 
-import utility from "@src/utilities";
-import postUser from "@src/apis/postUser";
+import utility from "@/utilities";
+import postUser from "@/apis/postUser";
 
 export default function Signup() {
 	const [submitted, setSubmitted] = useState(false);

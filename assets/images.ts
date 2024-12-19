@@ -76,6 +76,7 @@ const images = {
 		vamboAi: "/public/images/companies/logo-28.png",
 		linkarp: "/public/images/companies/logo-29.webp",
 		blackRhino: "/public/images/companies/logo-30.svg",
+		fahariAviation: "/public/images/companies/logo-31.jfif",
 	},
 
 	errors: {
@@ -382,6 +383,9 @@ const images = {
 		alfredOngere: "/public/images/people/speaker-48.webp",
 		hillaryWangila: "/public/images/people/speaker-49.webp",
 		francisOmondi: "/public/images/people/speaker-50.webp",
+		mosesKimebaro: "/public/images/people/speaker-51.webp",
+		georgeOgada: "/public/images/people/speaker-52.webp",
+		labanCliff: "/public/images/people/speaker-53.webp",
 	},
 
 	posters: {

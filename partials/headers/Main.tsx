@@ -7,10 +7,10 @@ import { IconPointFilled } from "@tabler/icons-react";
 
 import classes from "./Main.module.scss";
 
-import data from "@src/data";
+import data from "@/data";
 
-import Switch from "@src/components/switches";
-import Component from "@src/components";
+import Switch from "@/components/switches";
+import Component from "@/components";
 
 export default function Main() {
 	return (

@@ -3,7 +3,7 @@ import React from "react";
 import { Affix, Box, Transition } from "@mantine/core";
 import { useMediaQuery, useWindowScroll } from "@mantine/hooks";
 
-import Partial from "@src/partials";
+import Partial from "@/partials";
 
 export default function Navbar() {
 	const [scroll] = useWindowScroll();

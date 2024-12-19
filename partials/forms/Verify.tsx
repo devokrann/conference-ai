@@ -23,10 +23,10 @@ import { IconCheck, IconX } from "@tabler/icons-react";
 
 import { IMaskInput } from "react-imask";
 
-import utility from "@src/utilities";
+import utility from "@/utilities";
 
-import postOtp from "@src/apis/postOtp";
-import resendOtp from "@src/apis/resendOtp";
+import postOtp from "@/apis/postOtp";
+import resendOtp from "@/apis/resendOtp";
 
 export default function Verify({ userEmail }: { userEmail: string }) {
 	const [submitted, setSubmitted] = useState(false);

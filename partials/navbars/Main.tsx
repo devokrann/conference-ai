@@ -19,8 +19,8 @@ import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 
 import classes from "./Main.module.scss";
 import "./link.scss";
-import image from "@src/assets/images";
-import data from "@src/data";
+import image from "@/assets/images";
+import data from "@/data";
 import { IconChevronDown } from "@tabler/icons-react";
 
 export default function Main() {

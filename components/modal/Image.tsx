@@ -1,7 +1,7 @@
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Button, Text, Image, AspectRatio } from "@mantine/core";
 
-import Partial from "@src/partials";
+import Partial from "@/partials";
 
 import classes from "./Image.module.scss";
 

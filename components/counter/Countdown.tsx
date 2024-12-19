@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import { Grid, Stack, Text } from "@mantine/core";
-import useCountdown from "@src/hooks/timers/countdown";
-import data from "@src/data";
+import useCountdown from "@/hooks/timers/countdown";
+import data from "@/data";
 
 export default function Countdown() {
 	const targetDate = data.date.eventDay;

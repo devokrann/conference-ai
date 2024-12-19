@@ -13,7 +13,7 @@ import { IMaskInput } from "react-imask";
 
 import emailjs from "@emailjs/browser";
 
-import postContact from "@src/apis/postContact";
+import postContact from "@/apis/postContact";
 
 import email from "../email";
 

@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 import { Anchor, Box, Card, Group, Image, Stack, Text } from "@mantine/core";
 
-import hook from "@src/hooks";
+import hook from "@/hooks";
 
-import { typeSpeaker } from "@src/types/people";
+import { typeSpeaker } from "@/types/people";
 
 import classes from "./Listing.module.scss";
 
-import icons from "@src/data/icons";
+import icons from "@/data/icons";
 
 export default function Listing({ data }: { data: typeSpeaker }) {
 	return (

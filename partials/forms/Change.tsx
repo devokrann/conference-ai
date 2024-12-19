@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import {
 	Anchor,
@@ -21,9 +22,9 @@ import { IconCheck, IconX } from "@tabler/icons-react";
 
 import { IMaskInput } from "react-imask";
 
-import utility from "@src/utilities";
+import utility from "@/utilities";
 
-import postChange from "@src/apis/postChange";
+import postChange from "@/apis/postChange";
 
 export default function Change({
 	params,

@@ -2,12 +2,12 @@ import React from "react";
 
 import { Box, Button, Container, Grid, Group, Stack, Title } from "@mantine/core";
 
-import Counter from "@src/components/counter";
+import Counter from "@/components/counter/Countdown";
 
 import classes from "./Main.module.scss";
 import { Link } from "react-router-dom";
 
-import data from "@src/data";
+import data from "@/data";
 export default function Main() {
 	return (
 		<Box className={classes.cta} py={"xl"}>

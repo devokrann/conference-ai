@@ -1,4 +1,4 @@
-import image from "@src/assets/images";
+import image from "@/assets/images";
 
 const partners = [
 	{

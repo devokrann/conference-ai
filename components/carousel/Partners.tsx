@@ -6,7 +6,7 @@ import { AspectRatio, Box, Image, useMantineColorScheme } from "@mantine/core";
 
 import Autoplay from "embla-carousel-autoplay";
 
-import image from "@src/assets/images";
+import image from "@/assets/images";
 
 export default function Partners() {
 	const autoplay = useRef(Autoplay({ delay: 2000 }));
