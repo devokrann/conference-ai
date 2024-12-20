@@ -1,0 +1,40 @@
+.item {
+  border-bottom: 0px solid
+    light-dark(var(--mantine-color-pri-light), var(--mantine-color-gray-light));
+  margin-bottom: calc(var(--mantine-spacing-xs) / 2);
+  border-radius: var(--mantine-radius-sm);
+  overflow: hidden;
+}
+
+.control {
+  background-color: light-dark(
+    var(--mantine-color-pri-6),
+    var(--mantine-color-pri-light)
+  );
+  color: light-dark(var(--mantine-color-white), var(--mantine-color-white));
+  transition: 0.25s all ease;
+
+  &:hover {
+    background-color: light-dark(
+      var(--mantine-color-sec-6),
+      var(--mantine-color-sec-light)
+    );
+    color: light-dark(var(--mantine-color-pri-6), var(--mantine-color-sec-6));
+  }
+}
+
+.label {
+  font-weight: 500;
+}
+
+.content {
+  padding: var(--mantine-spacing-md) 0;
+  background-color: light-dark(
+    var(--mantine-color-pri-light),
+    var(--mantine-color-pri-light)
+  );
+}
+
+.panel {
+  padding: 0 var(--mantine-spacing-lg);
+}
