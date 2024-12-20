@@ -117,7 +117,7 @@ export default async function Exhibit() {
             </Text>
           </Stack>
           <Grid justify="center">
-            {exhibition.booths.map((booth,index) => (
+            {exhibition.booths.map((booth, index) => (
               <GridCol key={index} span={{ base: 12, sm: 6 }}>
                 <CardBooth data={booth} />
               </GridCol>

@@ -35,23 +35,23 @@ export default function Avatar({ ...restProps }: Partial<DropzoneProps>) {
     }
   };
 
-  const handleUpload = async () => {
-    if (!file) return;
+  // const handleUpload = async () => {
+  //   if (!file) return;
 
-    const formData = new FormData();
-    formData.append('avatar', file);
+  //   const formData = new FormData();
+  //   formData.append('avatar', file);
 
-    const res = await fetch('/api/upload-avatar', {
-      method: 'POST',
-      body: formData,
-    });
+  //   const res = await fetch('/api/upload-avatar', {
+  //     method: 'POST',
+  //     body: formData,
+  //   });
 
-    if (res.ok) {
-      alert('Avatar uploaded successfully!');
-    } else {
-      alert('Failed to upload avatar.');
-    }
-  };
+  //   if (res.ok) {
+  //     alert('Avatar uploaded successfully!');
+  //   } else {
+  //     alert('Failed to upload avatar.');
+  //   }
+  // };
 
   return (
     <Dropzone

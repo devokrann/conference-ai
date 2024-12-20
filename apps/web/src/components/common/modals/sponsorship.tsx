@@ -1,6 +1,6 @@
 import { useDisclosure } from '@mantine/hooks';
 import { Modal, Button, Text } from '@mantine/core';
-import FormSponsorship from '@/components/form/Sponsorship';
+import FormSponsorship from '@/components/form/sponsorship';
 
 export default function Sponsorship({ label }: { label: string }) {
   const [opened, { open, close }] = useDisclosure(false);

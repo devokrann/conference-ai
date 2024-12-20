@@ -16,25 +16,27 @@ import {
   Text,
 } from '@mantine/core';
 
-import { Speaker } from '@/types/people';
+// import { Speaker } from '@/types/people';
 import { linkify } from '@repo/utils/formatters';
 import CardSpeakerAgenda from '../cards/speaker/agenda';
 import clases from './program.module.scss';
 
-export default function Program({
-  data,
-}: {
-  data: {
-    title: { duration: string; heading: string };
-    desc: {
-      agenda: string;
-      questions?: string[];
-      participants?: Speaker[];
-      moderators?: Speaker[];
-      speaker?: Speaker;
-    };
-  }[];
-}) {
+// interface ProgramProps {
+//   title: {
+//     duration: string;
+//     heading: string;
+//   };
+//   desc: {
+//     agenda: string;
+//     platform?: string;
+//     questions?: string[];
+//     participants?: Speaker[];
+//     moderators?: Speaker[];
+//     speaker?: Speaker | undefined;
+//   };
+// }
+
+export default function Program({ data }: { data: any[] }) {
   const items = data.map((item) => (
     <AccordionItem key={item.title.duration} value={item.title.duration}>
       <AccordionControl>
@@ -68,7 +70,7 @@ export default function Program({
                 />
 
                 <Stack gap={'xs'}>
-                  {item.desc.questions?.map((question) => (
+                  {item.desc.questions?.map((question: any) => (
                     <Text inherit key={question}>
                       {question}
                     </Text>
@@ -78,8 +80,8 @@ export default function Program({
             )}
 
             {item.desc.participants &&
-              item.desc.participants?.filter((p) => p != undefined).length >
-                0 && (
+              item.desc.participants?.filter((p: any) => p != undefined)
+                .length > 0 && (
                 <Stack gap={'xs'}>
                   {item.title.heading != 'Welcome & Opening Keynote' && (
                     <Divider
@@ -91,7 +93,7 @@ export default function Program({
 
                   <Group>
                     {item.desc.participants.map(
-                      (participant) =>
+                      (participant: any) =>
                         participant && (
                           <Anchor
                             key={participant.name}
@@ -114,7 +116,7 @@ export default function Program({
               )}
 
             {item.desc.moderators &&
-              item.desc.moderators?.filter((m) => m != undefined).length >
+              item.desc.moderators?.filter((m: any) => m != undefined).length >
                 0 && (
                 <Stack gap={'xs'}>
                   <Divider
@@ -131,7 +133,7 @@ export default function Program({
 								</Stack> */}
                   <Group>
                     {item.desc.moderators.map(
-                      (moderator) =>
+                      (moderator: any) =>
                         moderator && (
                           <Anchor
                             key={moderator.name}

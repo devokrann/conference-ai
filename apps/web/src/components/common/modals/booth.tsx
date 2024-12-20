@@ -1,6 +1,6 @@
 import { useDisclosure } from '@mantine/hooks';
 import { Modal, Button, Text } from '@mantine/core';
-import FormBooth from '@/components/form/Booth';
+import FormBooth from '@/components/form/booth';
 
 export default function Booth({ label }: { label: string }) {
   const [opened, { open, close }] = useDisclosure(false);

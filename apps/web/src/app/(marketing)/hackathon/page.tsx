@@ -58,7 +58,9 @@ export default async function Hackathon() {
             Applications will undergo review and final hackathon participants
             will be contacted.
           </Text>
-          <FormContact defaultInquiry="Hackathon Registration" />
+          <FormContact
+          // defaultInquiry="Hackathon Registration"
+          />
         </Stack>
       </LayoutSection>
     </LayoutPage>

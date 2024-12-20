@@ -4,29 +4,21 @@ import React from 'react';
 
 import Link from 'next/link';
 
-import {
-  Group,
-  Button,
-  Divider,
-  Anchor,
-  Grid,
-  GridCol,
-  Center,
-} from '@mantine/core';
+import { Group, Anchor, Grid, GridCol } from '@mantine/core';
 
 import LayoutSection from '@/components/layout/section';
 import DrawerNavbarMain from '@/components/common/drawers/navbar/main';
-import MenuAvatar from '@/components/common/menus/avatar';
 import MenuNavbar from '@/components/common/menus/navbar';
-import DrawerUser from '@/components/common/drawers/user';
-import { SignIn as FragmentSignIn } from '@/components/common/fragments/auth';
+// import MenuAvatar from '@/components/common/menus/avatar';
+// import DrawerUser from '@/components/common/drawers/user';
+// import { SignIn as FragmentSignIn } from '@/components/common/fragments/auth';
 
 import classes from './main.module.scss';
 import { IconChevronDown } from '@tabler/icons-react';
-import { AUTH_URLS, ICON_SIZE, ICON_STROKE_WIDTH } from '@/data/constants';
-import { useMediaQuery } from '@mantine/hooks';
+import { ICON_SIZE, ICON_STROKE_WIDTH } from '@/data/constants';
+// import { useMediaQuery } from '@mantine/hooks';
+// import { useAppSelector } from '@/hooks/redux';
 import { usePathname } from 'next/navigation';
-import { useAppSelector } from '@/hooks/redux';
 import ImageDefault from '@/components/common/images/default';
 import { images } from '@/assets/images';
 import appData from '@/data/app';

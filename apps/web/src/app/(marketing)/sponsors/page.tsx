@@ -6,7 +6,7 @@ import LayoutSection from '@/components/layout/section';
 import { Grid, GridCol, Stack, Text, Title } from '@mantine/core';
 import CardSponsorship from '@/components/common/cards/sponsorship';
 import { sponsorship } from '@/data/sponsorship';
-import CardSponsor from '@/components/common/cards/sponsor';
+// import CardSponsor from '@/components/common/cards/sponsor';
 
 export const metadata: Metadata = { title: 'Sponsors' };
 

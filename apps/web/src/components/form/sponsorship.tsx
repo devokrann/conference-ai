@@ -1,35 +1,39 @@
 import React, { useEffect } from 'react';
-import ReactDOMServer from 'react-dom/server';
-import Link from 'next/link';
+// import ReactDOMServer from 'react-dom/server';
+// import Link from 'next/link';
 import { useState } from 'react';
 
 import {
-  Anchor,
+  // Anchor,
   Box,
   Button,
-  Checkbox,
+  // Checkbox,
   Grid,
   GridCol,
   Input,
   Select,
-  Text,
+  // Text,
   TextInput,
   Textarea,
 } from '@mantine/core';
-import { isNotEmpty, useForm } from '@mantine/form';
-import { notifications } from '@mantine/notifications';
+import {
+  // isNotEmpty,
+  useForm,
+} from '@mantine/form';
+// import { notifications } from '@mantine/notifications';
+// import { IconCheck, IconX } from '@tabler/icons-react';
 
-import { IconCheck, IconX } from '@tabler/icons-react';
-
-import { IMaskInput } from 'react-imask';
-
-import emailjs from '@emailjs/browser';
+// import { IMaskInput } from 'react-imask';
+// import emailjs from '@emailjs/browser';
 
 // import postContact from "@/apis/postContact";
 // import email from "../email";
 
 export default function Sponsorship() {
-  const [submitted, setSubmitted] = useState(false);
+  const [
+    submitted,
+    // setSubmitted
+  ] = useState(false);
   const [message, setMessage] = useState('');
 
   const form = useForm({
@@ -58,91 +62,91 @@ export default function Sponsorship() {
     },
   });
 
-  const handleSubmit = async () => {
-    if (form.isValid()) {
-      setSubmitted(true);
+  // const handleSubmit = async () => {
+  //   if (form.isValid()) {
+  //     setSubmitted(true);
 
-      const templateParams = {
-        fname:
-          form.values.fname.trim().toLowerCase().charAt(0).toUpperCase() +
-          form.values.fname.trim().slice(1).toLowerCase(),
-        lname:
-          form.values.lname.trim().toLowerCase().charAt(0).toUpperCase() +
-          form.values.lname.trim().slice(1).toLowerCase(),
-        email: form.values.email.trim().toLowerCase(),
-        phone: form.values.phone,
-        subject:
-          form.values.subject == 'Other' ? 'General' : `${form.values.subject}`,
-        message: form.values.message.trim(),
-      };
+  //     const templateParams = {
+  //       fname:
+  //         form.values.fname.trim().toLowerCase().charAt(0).toUpperCase() +
+  //         form.values.fname.trim().slice(1).toLowerCase(),
+  //       lname:
+  //         form.values.lname.trim().toLowerCase().charAt(0).toUpperCase() +
+  //         form.values.lname.trim().slice(1).toLowerCase(),
+  //       email: form.values.email.trim().toLowerCase(),
+  //       phone: form.values.phone,
+  //       subject:
+  //         form.values.subject == 'Other' ? 'General' : `${form.values.subject}`,
+  //       message: form.values.message.trim(),
+  //     };
 
-      // console.log(templateParams);
+  //     // console.log(templateParams);
 
-      await emailjs
-        .send(
-          'gmail_service',
-          'general_inquiries',
-          templateParams,
-          'WIhPTsJnYGDJDfdIP'
-        )
-        .then(() => {
-          notifications.show({
-            id: 'contact-form-success',
-            withCloseButton: false,
-            color: 'pri.6',
-            icon: <IconCheck size={16} stroke={1.5} />,
-            autoClose: 10000,
-            title: 'Inquiry Sent',
-            message: 'Someone will get back to you within 24 hours',
-            styles: (theme) => ({
-              icon: {
-                color: theme.colors.sec[4],
-              },
-              closeButton: {
-                color: theme.colors.pri[6],
-              },
-            }),
-          });
-        })
-        .then(() =>
-          notifications.show({
-            id: 'contact-form-success',
-            withCloseButton: false,
-            color: 'pri',
-            icon: <IconCheck size={16} stroke={1.5} />,
-            autoClose: 5000,
-            title: 'Inquiry Sent',
-            message: 'Someone will get back to you within 24 hours',
-            styles: (theme) => ({
-              icon: {
-                color: theme.colors.sec[4],
-              },
-              closeButton: {
-                color: theme.colors.pri[6],
-              },
-            }),
-          })
-        )
-        .then(() => form.reset())
-        .catch((error) =>
-          notifications.show({
-            id: 'contact-form-fail',
-            color: 'red',
-            icon: <IconX size={16} stroke={1.5} />,
-            autoClose: 5000,
-            title: 'Send Failed',
-            message: `Error: ${error.message}`,
-            styles: (theme) => ({
-              closeButton: {
-                color: theme.colors.red[6],
-              },
-            }),
-          })
-        );
+  //     await emailjs
+  //       .send(
+  //         'gmail_service',
+  //         'general_inquiries',
+  //         templateParams,
+  //         'WIhPTsJnYGDJDfdIP'
+  //       )
+  //       .then(() => {
+  //         notifications.show({
+  //           id: 'contact-form-success',
+  //           withCloseButton: false,
+  //           color: 'pri.6',
+  //           icon: <IconCheck size={16} stroke={1.5} />,
+  //           autoClose: 10000,
+  //           title: 'Inquiry Sent',
+  //           message: 'Someone will get back to you within 24 hours',
+  //           styles: (theme) => ({
+  //             icon: {
+  //               color: theme.colors.sec[4],
+  //             },
+  //             closeButton: {
+  //               color: theme.colors.pri[6],
+  //             },
+  //           }),
+  //         });
+  //       })
+  //       .then(() =>
+  //         notifications.show({
+  //           id: 'contact-form-success',
+  //           withCloseButton: false,
+  //           color: 'pri',
+  //           icon: <IconCheck size={16} stroke={1.5} />,
+  //           autoClose: 5000,
+  //           title: 'Inquiry Sent',
+  //           message: 'Someone will get back to you within 24 hours',
+  //           styles: (theme) => ({
+  //             icon: {
+  //               color: theme.colors.sec[4],
+  //             },
+  //             closeButton: {
+  //               color: theme.colors.pri[6],
+  //             },
+  //           }),
+  //         })
+  //       )
+  //       .then(() => form.reset())
+  //       .catch((error) =>
+  //         notifications.show({
+  //           id: 'contact-form-fail',
+  //           color: 'red',
+  //           icon: <IconX size={16} stroke={1.5} />,
+  //           autoClose: 5000,
+  //           title: 'Send Failed',
+  //           message: `Error: ${error.message}`,
+  //           styles: (theme) => ({
+  //             closeButton: {
+  //               color: theme.colors.red[6],
+  //             },
+  //           }),
+  //         })
+  //       );
 
-      setSubmitted(false);
-    }
-  };
+  //     setSubmitted(false);
+  //   }
+  // };
 
   useEffect(() => {
     if (form.values.subject == 'Booth Registration') {
@@ -157,7 +161,11 @@ export default function Sponsorship() {
   }, [form.values.subject]);
 
   return (
-    <Box component="form" onSubmit={form.onSubmit(handleSubmit)} noValidate>
+    <Box
+      component="form"
+      // onSubmit={form.onSubmit(handleSubmit)}
+      noValidate
+    >
       <Grid pb={'md'}>
         <GridCol span={{ base: 12, sm: 6, md: 4 }}>
           <TextInput
@@ -178,10 +186,10 @@ export default function Sponsorship() {
         <GridCol span={{ base: 12, sm: 6, md: 4 }}>
           <Input.Wrapper label={'Phone'} id="phone">
             <Input
-              component={IMaskInput}
+              // component={IMaskInput}
+              // mask={'+(254) 700 000-000'}
               id="phone"
               placeholder="Your Phone"
-              mask={'+(254) 700 000-000'}
               {...form.getInputProps('phone')}
             />
           </Input.Wrapper>
@@ -217,7 +225,7 @@ export default function Sponsorship() {
           >
             <Input
               id="email"
-              component={IMaskInput}
+              // component={IMaskInput}
               type="email"
               placeholder="Your Email"
               {...form.getInputProps('email')}
