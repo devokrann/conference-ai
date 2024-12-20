@@ -2,7 +2,7 @@ import React from 'react';
 import { Divider, Group, Stack, Text, ThemeIcon, Title } from '@mantine/core';
 import { IconCheck } from '@tabler/icons-react';
 import ModalContact from '../modals/contact';
-import classes from './Sponsorship.module.scss';
+import classes from './sponsorship.module.scss';
 
 interface SponsorshipProps {
   title: string;
