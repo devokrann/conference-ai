@@ -68,11 +68,11 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
-      data-mantine-color-scheme={(colorScheme || 'light') as MantineColorScheme}
+      data-mantine-color-scheme={(colorScheme || 'dark') as MantineColorScheme}
     >
       <head>
         <ColorSchemeScript
-          defaultColorScheme={(colorScheme || 'light') as MantineColorScheme}
+          defaultColorScheme={(colorScheme || 'dark') as MantineColorScheme}
         />
 
         <meta
@@ -83,14 +83,14 @@ export default async function RootLayout({
 
       <body className={noto.className}>
         <ProviderStore
-          colorScheme={colorSchemeState || 'light'}
+          colorScheme={colorSchemeState || 'dark'}
           session={await getSession()}
           geoData={await getGeoData()}
         >
           <MantineProvider
             theme={appTheme}
             cssVariablesResolver={appResolver}
-            defaultColorScheme={(colorScheme || 'light') as MantineColorScheme}
+            defaultColorScheme={(colorScheme || 'dark') as MantineColorScheme}
             classNamesPrefix={linkify(appData.name.app)}
           >
             <ModalsProvider>{children}</ModalsProvider>
