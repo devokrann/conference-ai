@@ -1,0 +1,13 @@
+.imageContainer {
+  overflow: hidden;
+}
+
+.imageOuter {
+  transform: scale(1.1);
+  transition: 0.25s all ease;
+
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+}
