@@ -8,10 +8,10 @@ import classes from './contact.module.scss';
 
 export default function Contact({
   title,
-  inquiry,
-  booth,
-  sponsorPackage,
-  boothSize,
+  // inquiry,
+  // booth,
+  // sponsorPackage,
+  // boothSize,
   sold,
   children,
   ...restProps
@@ -40,10 +40,10 @@ export default function Contact({
         mah={'50vh'}
       >
         <FormContact
-          defaultInquiry={inquiry}
-          defaultBooth={booth}
-          defaultBoothSize={boothSize}
-          defaultPackage={sponsorPackage}
+        // defaultInquiry={inquiry}
+        // defaultBooth={booth}
+        // defaultBoothSize={boothSize}
+        // defaultPackage={sponsorPackage}
         />
       </Modal>
 

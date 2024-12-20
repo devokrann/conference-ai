@@ -8,6 +8,6 @@ export interface Speaker {
     email: string;
     phone?: string | string[];
     socials?: { label: string; link: string }[];
-  };
+  } | null;
   category: string[];
 }

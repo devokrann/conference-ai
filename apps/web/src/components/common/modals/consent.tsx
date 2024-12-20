@@ -10,7 +10,7 @@ import {
   GridCol,
   Anchor,
 } from '@mantine/core';
-import { images } from '@/assets/images';
+// import { images } from '@/assets/images';
 
 export default function Consent() {
   const [opened, { open, close }] = useDisclosure(false);
@@ -53,7 +53,11 @@ export default function Consent() {
 
           <GridCol span={{ base: 12, md: 3 }}>
             <Group justify="center">
-              <Image src={images.codeConsent} w={'100%'} alt="QR code" />
+              <Image
+                // src={images.codeConsent}
+                w={'100%'}
+                alt="QR code"
+              />
             </Group>
           </GridCol>
 

@@ -9,10 +9,10 @@ import ImageDefault from '../images/default';
 import WrapperTransition from '@/components/wrapper/transition';
 import {
   ICON_SIZE,
-  ICON_STROKE_WIDTH,
+  // ICON_STROKE_WIDTH,
   ICON_WRAPPER_SIZE,
 } from '@/data/constants';
-import { IconChevronUp } from '@tabler/icons-react';
+// import { IconChevronUp } from '@tabler/icons-react';
 
 export default function WhatsApp({
   position = {

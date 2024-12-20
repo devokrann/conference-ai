@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { AUTH_URLS, BASE_URL, COOKIE_NAME } from './data/constants';
 import { updateSession } from './libraries/auth';
-import { setGeoData, updateGeoData } from './libraries/geolocation';
+// import { setGeoData, updateGeoData } from './libraries/geolocation';
 
 // This function can be marked `async` if using `await` inside
 export async function middleware(request: NextRequest) {

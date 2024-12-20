@@ -4,15 +4,15 @@ import React from 'react';
 
 import Link from 'next/link';
 
-import { Burger, Button, Drawer, NavLink, Stack } from '@mantine/core';
+import { Burger, Drawer, NavLink, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { SignIn as FragmentSignIn } from '../../fragments/auth';
+// import { SignIn as FragmentSignIn } from '../../fragments/auth';
 
 import classes from './main.module.scss';
 
 import { typeMenuNavbar } from '@/types/components/menu';
 import { ICON_SIZE, ICON_STROKE_WIDTH } from '@/data/constants';
-import { useAppSelector } from '@/hooks/redux';
+// import { useAppSelector } from '@/hooks/redux';
 import { usePathname } from 'next/navigation';
 
 export default function Main({
@@ -23,7 +23,7 @@ export default function Main({
   options?: { absolute?: boolean };
 }) {
   const [opened, { toggle, close }] = useDisclosure(false);
-  const session = useAppSelector((state) => state.session.value);
+  // const session = useAppSelector((state) => state.session.value);
   const pathname = usePathname();
 
   const matchesPath = (link: string) => {

@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { Anchor, Center, Stack, Text } from '@mantine/core';
-import { Speaker } from '@/types/people';
+// import { Speaker } from '@/types/people';
 import classes from './listing.module.scss';
 import { linkify } from '@repo/utils/formatters';
 import ImageDefault from '../../images/default';
 
-export default function Listing({ data }: { data: Speaker }) {
+export default function Listing({ data }: { data: any }) {
   return (
     <Stack className={classes.card}>
       <Center>
