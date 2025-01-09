@@ -17,9 +17,11 @@ export const AUTH_URLS = {
   VERIFY_REQUEST: `${BASE_URL}/auth/verify-request`,
   ERROR: `${BASE_URL}/auth/error`,
   SIGN_OUT: `${BASE_URL}/auth/sign-out`,
+  PASSWORD_FORGOT: `${BASE_URL}/auth/password/forgot`,
 };
 
 export const GEO_DATA_URL = {
+  IP: `${process.env.NEXT_PUBLIC_IP_API_URL}`,
   COUNTRIES: `${process.env.NEXT_PUBLIC_REST_COUNTRIES_API_URL}`,
 };
 
@@ -33,25 +35,28 @@ export const TRANSITION_DURATION = 250;
 
 export const SECTION_SPACING = 64;
 
-export const FONT_CTA_TITLE = 40;
+export const FONTCTATITLE = 40;
 
-export const FONT = { CTA_TITLE: FONT_CTA_TITLE };
+export const FONT = { CTA_TITLE: FONTCTATITLE };
+
+export const PASSWORD_REQUIREMENTS = [
+  { re: /[0-9]/, label: 'number' },
+  { re: /[a-z]/, label: 'lowercase letter' },
+  { re: /[A-Z]/, label: 'uppercase letter' },
+  { re: /[$&+,:;=?@#|'<>.^*()%!-]/, label: 'special symbol' },
+];
 
 export const TIMEOUT = { REDIRECT: 5000 };
 
-export const FILE_NAME = {
-  AVATAR: 'avatar',
-};
-
 export const COOKIE_NAME = {
+  GEO: 'geo',
+  OAUTH: { UUID: 'oauth.uuid' },
   CONSENT: { COOKIES: 'consent.cookies' },
+  DEVICE: { OS: 'device.os' },
   LOCAL: { COUNTRY: 'local.country', COUNTRIES: 'local.countries' },
+  SESSION: 'auth.session',
   COLOR_SCHEME: 'theme.color-scheme',
   COLOR_SCHEME_STATE: 'theme.color-scheme-state',
-};
-
-export const BUCKET_NAME = {
-  AVATARS: 'avatars',
 };
 
 export const LOCAL_STORAGE_NAME = {
@@ -69,6 +74,8 @@ const WITH_BODY: HeadersInit = {
 };
 
 export const HEADERS = { WITH_BODY, WITHOUT_BODY };
+
+export const KEY = new TextEncoder().encode(process.env.JWT_SECRET);
 
 const EXPIRY_SESSION_SEC_STANDARD = 60 * 60 * 24;
 const EXPIRY_SESSION_SEC_EXTENDED = 7 * EXPIRY_SESSION_SEC_STANDARD;

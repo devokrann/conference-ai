@@ -1,12 +1,12 @@
 import sample from './sample';
 
-const companyName = 'Brix';
+const companyName = 'AI Conference';
 const appName = companyName;
 const companyOneLiner = sample.text.sentence;
 const companyDescription = sample.text.prose;
 
 export const phones = {
-  main: '(254) 123 456-789',
+  main: '(254) 712 656-565',
 };
 
 export const emails = {
@@ -17,19 +17,19 @@ export const emails = {
 export const socials = {
   twitter: {
     platform: `X`,
-    link: '#twitter',
+    link: 'https://x.com/aiconference_ke?t=vH9rLLLgruVtU64zJy34vA&s=09',
   },
   facebook: {
     platform: `Facebook`,
-    link: '#facebook',
+    link: 'https://www.facebook.com/profile.php?id=61555858636752&mibextid=ZbWKwL',
   },
   instagram: {
     platform: `Instagram`,
-    link: '#instagram',
+    link: 'https://www.instagram.com/aiconference_ke?igsh=cjRheXZzdDc1N2Fw',
   },
   linkedin: {
     platform: `LinkedIn`,
-    link: '#linkedin',
+    link: 'https://www.linkedin.com/showcase/aiconference-nairobi/?viewAsMember=true',
   },
 };
 
@@ -40,8 +40,8 @@ export const hours = {
 
 export const locations = {
   main: {
-    location: '410 Terry Ave. North, Seattle, WA 98109',
-    pin: '#pin',
+    location: 'JW Marriott Hotel, Westlands',
+    pin: 'https://maps.app.goo.gl/gxZAtQpLaAkazFdC9',
   },
 };
 

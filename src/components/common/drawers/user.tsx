@@ -5,7 +5,7 @@ import React from 'react';
 import { Box, Drawer, NavLink, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
-import MenuUser from '@/components/common/menus/user';
+import MenuAvatar from '@/components/common/menus/avatar';
 import PartialUser from '@/components/partial/user';
 
 import classes from './user.module.scss';
@@ -98,7 +98,7 @@ export default function User() {
         aria-label="Toggle User Navbar"
         style={{ cursor: 'pointer' }}
       >
-        <MenuUser />
+        <MenuAvatar />
       </Box>
     </>
   );

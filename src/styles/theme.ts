@@ -9,7 +9,6 @@ import {
   PasswordInput,
   Textarea,
   TextInput,
-  virtualColor,
 } from '@mantine/core';
 
 import cx from 'clsx';
@@ -23,19 +22,30 @@ const appTheme = createTheme({
   activeClassName: 'active',
 
   colors: {
-    priWhite: [
-      '#000000', // Black
-      '#1a1a1a',
-      '#333333',
-      '#666666',
-      '#808080', // Medium Gray
-      '#999999',
-      '#b3b3b3',
-      '#cccccc',
-      '#f2f2f2',
-      '#ffffff', // White
+    pri: [
+      '#ebf9ff',
+      '#d6effb',
+      '#a8def8',
+      '#78cdf7',
+      '#58bef5',
+      '#48b6f5',
+      '#3fb1f6',
+      '#339bdb',
+      '#2589c4',
+      '#0077ad',
     ],
-
+    sec: [
+      '#fffde2',
+      '#fffbcc',
+      '#fff89b',
+      '#fff364',
+      '#fff039',
+      '#ffee1d',
+      '#ffed09',
+      '#e3d200',
+      '#c9ba00',
+      '#ada000',
+    ],
     priBlack: [
       '#ffffff', // White
       '#f2f2f2',
@@ -48,12 +58,6 @@ const appTheme = createTheme({
       '#1a1a1a',
       '#000000', // Black
     ],
-
-    pri: virtualColor({
-      name: 'pri',
-      light: 'blue',
-      dark: 'yellow',
-    }),
   },
 
   primaryColor: 'pri',
@@ -67,6 +71,8 @@ const appTheme = createTheme({
     to: 'blue',
     deg: 45,
   },
+
+  headings: { fontFamily: 'Century Gothic, sans-serif' },
 
   cursorType: 'pointer',
 

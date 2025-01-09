@@ -25,23 +25,20 @@ import {
 } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
 import { ModalsProvider } from '@mantine/modals';
-
-// import { SpeedInsights } from "@vercel/speed-insights/next";
-
 import appTheme from '@/styles/theme';
 import appResolver from '@/styles/resolver';
-
 import appData from '@/data/app';
 import { linkify } from '@/utilities/formatters/string';
-
 import { createClient } from '@/libraries/supabase/server';
-
-import AffixOffline from '@/components/common/affixi/offline';
 import { COOKIE_NAME } from '@/data/constants';
-
 import ProviderStore from '@/components/providers/store';
 import { cookies } from 'next/headers';
-import AffixiCookies from '@/components/common/affixi/cookies';
+// import AffixOffline from '@/components/common/affixi/offline';
+// import AffixiCookies from '@/components/common/affixi/cookies';
+// import { SpeedInsights } from "@vercel/speed-insights/next";
+import AffixWhatsApp from '@/components/common/affixi/whatsapp';
+import AffixNavbar from '@/components/common/affixi/navbar';
+import AffixTop from '@/components/common/affixi/top';
 
 const noto = DM_Sans({ subsets: ['latin'] });
 
@@ -95,8 +92,11 @@ export default async function RootLayout({
 
             <Notifications limit={3} />
 
-            <AffixOffline />
-            <AffixiCookies />
+            <AffixTop />
+            <AffixNavbar />
+            <AffixWhatsApp />
+            {/* <AffixOffline /> */}
+            {/* <AffixiCookies /> */}
           </MantineProvider>
         </ProviderStore>
 

@@ -1,17 +1,17 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
-  Avatar as MantineAvatar,
   Box,
-  Button,
+  Center,
+  Grid,
+  GridCol,
   Stack,
   Text,
-  ThemeIcon,
-  Flex,
+  Avatar as MantineAvatar,
 } from '@mantine/core';
-import { IconUpload, IconUserCircle, IconX } from '@tabler/icons-react';
+import { IconUpload, IconX, IconUserCircle } from '@tabler/icons-react';
 import {
   Dropzone,
   DropzoneAccept,
@@ -21,15 +21,13 @@ import {
   IMAGE_MIME_TYPE,
 } from '@mantine/dropzone';
 import { ICON_SIZE, ICON_STROKE_WIDTH } from '@/data/constants';
-import { useFormUserAvatar } from '@/hooks/form/account/profile';
 
 export default function Avatar({ ...restProps }: Partial<DropzoneProps>) {
-  const { file, preview, handleSubmit, setFile, setPreview, submitted } =
-    useFormUserAvatar();
+  const [file, setFile] = useState<File | null>(null);
+  const [preview, setPreview] = useState<string | null>(null);
 
   const handleFileChange = (selectedFile: File | null) => {
     setFile(selectedFile);
-
     if (selectedFile) {
       setPreview(URL.createObjectURL(selectedFile));
     } else {
@@ -37,30 +35,50 @@ export default function Avatar({ ...restProps }: Partial<DropzoneProps>) {
     }
   };
 
+  // const handleUpload = async () => {
+  //   if (!file) return;
+
+  //   const formData = new FormData();
+  //   formData.append('avatar', file);
+
+  //   const res = await fetch('/api/upload-avatar', {
+  //     method: 'POST',
+  //     body: formData,
+  //   });
+
+  //   if (res.ok) {
+  //     alert('Avatar uploaded successfully!');
+  //   } else {
+  //     alert('Failed to upload avatar.');
+  //   }
+  // };
+
   return (
-    <Stack align="start">
-      <Dropzone
-        onDrop={(files) => handleFileChange(files[0])}
-        onReject={() => {
-          setFile(null);
-          setPreview(null);
-        }}
-        maxSize={1 * 1024 ** 2}
-        maxFiles={1}
-        accept={IMAGE_MIME_TYPE}
-        {...restProps}
-      >
-        <Box style={{ pointerEvents: 'none' }}>
-          <DropzoneAccept>
-            <DropZoneLayout>
-              <ThemeIcon size={80} variant="light" color="blue.6">
+    <Dropzone
+      onDrop={(files) => handleFileChange(files[0])}
+      onReject={() => {
+        setFile(null);
+        setPreview(null);
+      }}
+      maxSize={5 * 1024 ** 2}
+      maxFiles={1}
+      accept={IMAGE_MIME_TYPE}
+      {...restProps}
+    >
+      <Box style={{ pointerEvents: 'none' }}>
+        <DropzoneAccept>
+          <Grid align="center">
+            <GridCol span={{ base: 12, xs: 2 }}>
+              <Center>
                 <IconUpload
                   size={ICON_SIZE * 3}
                   stroke={ICON_STROKE_WIDTH}
                   color={'var(--mantine-color-blue-6)'}
                 />
-              </ThemeIcon>
+              </Center>
+            </GridCol>
 
+            <GridCol span={{ base: 12, xs: 10 }}>
               <Stack gap={4}>
                 <Text>File accepted</Text>
 
@@ -76,23 +94,27 @@ export default function Avatar({ ...restProps }: Partial<DropzoneProps>) {
                     <Text inherit component="span" fw={'bold'}>
                       Max size
                     </Text>
-                    : 1 MB
+                    : 5 MB
                   </Text>
                 </Stack>
               </Stack>
-            </DropZoneLayout>
-          </DropzoneAccept>
+            </GridCol>
+          </Grid>
+        </DropzoneAccept>
 
-          <DropzoneReject>
-            <DropZoneLayout>
-              <ThemeIcon size={80} variant="light" color="red.6">
+        <DropzoneReject>
+          <Grid align="center">
+            <GridCol span={{ base: 12, xs: 2 }}>
+              <Center>
                 <IconX
                   size={ICON_SIZE * 3}
                   stroke={ICON_STROKE_WIDTH}
                   color={'var(--mantine-color-red-6)'}
                 />
-              </ThemeIcon>
+              </Center>
+            </GridCol>
 
+            <GridCol span={{ base: 12, xs: 10 }}>
               <Stack gap={4}>
                 <Text c={'red.6'}>
                   File size too large or file type unaccepted
@@ -100,23 +122,27 @@ export default function Avatar({ ...restProps }: Partial<DropzoneProps>) {
 
                 {description}
               </Stack>
-            </DropZoneLayout>
-          </DropzoneReject>
+            </GridCol>
+          </Grid>
+        </DropzoneReject>
 
-          <DropzoneIdle>
-            <DropZoneLayout>
-              {file ? (
-                <MantineAvatar src={preview} size={80} radius={'sm'} />
-              ) : (
-                <ThemeIcon size={80} variant="light" color="gray">
+        <DropzoneIdle>
+          <Grid align="center">
+            <GridCol span={{ base: 12, xs: 2 }}>
+              <Center>
+                {file ? (
+                  <MantineAvatar src={preview} size={80} radius={'sm'} />
+                ) : (
                   <IconUserCircle
                     size={ICON_SIZE * 3}
                     stroke={ICON_STROKE_WIDTH}
                     color={'var(--mantine-color-gray-6)'}
                   />
-                </ThemeIcon>
-              )}
+                )}
+              </Center>
+            </GridCol>
 
+            <GridCol span={{ base: 12, xs: 10 }}>
               <Stack gap={4}>
                 {file ? (
                   <Text>File accepted</Text>
@@ -126,15 +152,11 @@ export default function Avatar({ ...restProps }: Partial<DropzoneProps>) {
 
                 {description}
               </Stack>
-            </DropZoneLayout>
-          </DropzoneIdle>
-        </Box>
-      </Dropzone>
-
-      <Button onClick={handleSubmit} disabled={!file} loading={submitted}>
-        Upload
-      </Button>
-    </Stack>
+            </GridCol>
+          </Grid>
+        </DropzoneIdle>
+      </Box>
+    </Dropzone>
   );
 }
 
@@ -154,19 +176,7 @@ const description = (
       <Text inherit component="span" fw={'bold'}>
         Max size
       </Text>
-      : 1 MB
+      : 5 MB
     </Text>
   </Stack>
 );
-
-function DropZoneLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <Flex
-      align={{ base: 'start', xs: 'center' }}
-      direction={{ base: 'column', xs: 'row' }}
-      gap={'md'}
-    >
-      {children}
-    </Flex>
-  );
-}

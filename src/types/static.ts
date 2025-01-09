@@ -1,6 +1,17 @@
+import { Icon } from '@tabler/icons-react';
 import { PostRelations as typePostRelations } from '@/types/models/post';
 import { ReplyRelations } from './models/reply';
 import { CommentRelations } from './models/comment';
+
+export interface Team {
+  name: string;
+  title: string;
+  image: string;
+  socials: {
+    icon: Icon;
+    link: string;
+  }[];
+}
 
 export interface Testimonial {
   content: string;

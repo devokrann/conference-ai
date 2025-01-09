@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { Affix, AffixBaseProps } from '@mantine/core';
+import { Affix, AffixBaseProps, Box } from '@mantine/core';
 import { useHeadroom, useWindowScroll } from '@mantine/hooks';
 
 import WrapperTransition from '@/components/wrapper/transition';
@@ -26,7 +26,9 @@ export default function Navbar({
         mounted={scroll.y > 120 && pinned}
       >
         <UnderlayGlass>
-          <NavbarMain />
+          <Box style={{ borderBottom: '1px solid var(--mantine-color-pri-6)' }}>
+            <NavbarMain />
+          </Box>
         </UnderlayGlass>
       </WrapperTransition>
     </Affix>

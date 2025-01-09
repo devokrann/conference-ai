@@ -4,15 +4,15 @@ import React from 'react';
 
 import Link from 'next/link';
 
-import { Burger, Button, Drawer, NavLink, Stack } from '@mantine/core';
+import { Burger, Drawer, NavLink, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { SignIn as WrapperSignIn } from '../../../wrapper/auth';
+// import { SignIn as FragmentSignIn } from '../../fragments/auth';
 
 import classes from './main.module.scss';
 
 import { typeMenuNavbar } from '@/types/components/menu';
 import { ICON_SIZE, ICON_STROKE_WIDTH } from '@/data/constants';
-import { useAppSelector } from '@/hooks/redux';
+// import { useAppSelector } from '@/hooks/redux';
 import { usePathname } from 'next/navigation';
 
 export default function Main({
@@ -23,7 +23,7 @@ export default function Main({
   options?: { absolute?: boolean };
 }) {
   const [opened, { toggle, close }] = useDisclosure(false);
-  const session = useAppSelector((state) => state.session.value);
+  // const session = useAppSelector((state) => state.session.value);
   const pathname = usePathname();
 
   const matchesPath = (link: string) => {
@@ -107,6 +107,7 @@ export default function Main({
         onClose={close}
         withCloseButton={false}
         size={240}
+        position="right"
         classNames={{
           body: classes.body,
           header: classes.header,
@@ -114,16 +115,6 @@ export default function Main({
       >
         <Stack>
           <Stack gap={0}>{navMobile}</Stack>
-
-          <Stack gap={'xs'} px={'xs'}>
-            {!session && (
-              <WrapperSignIn>
-                <Button size="xs" variant="light">
-                  Log In
-                </Button>
-              </WrapperSignIn>
-            )}
-          </Stack>
         </Stack>
       </Drawer>
 

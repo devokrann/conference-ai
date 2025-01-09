@@ -13,7 +13,6 @@ import {
   Group,
   GridCol,
   ListItem,
-  ThemeIcon,
   Stack,
 } from '@mantine/core';
 
@@ -23,67 +22,88 @@ import { images } from '@/assets/images';
 
 import classes from './main.module.scss';
 import appData from '@/data/app';
-import { dataSocials } from '@/app/(marketing)/contact/page';
+import { socials } from '@/data/social';
 import {
   ICON_SIZE,
-  ICON_STROKE_WIDTH,
-  ICON_WRAPPER_SIZE,
+  // ICON_STROKE_WIDTH,
+  // ICON_WRAPPER_SIZE,
   SECTION_SPACING,
 } from '@/data/constants';
-import SegmentedControlTheme from '@/components/common/segmented-control/theme';
-import { IconCircleFilled } from '@tabler/icons-react';
-import FormNewsletter from '@/components/form/newsletter';
+// import SegmentedControlTheme from '@/components/common/segmented-control/theme';
+// import { IconCircleFilled } from '@tabler/icons-react';
+// import FormNewsletter from '@/components/form/newsletter';
 import ImageDefault from '@/components/common/images/default';
 
 export default function Main() {
   return (
     <LayoutSection id={'partial-footer-main'} padded className={classes.footer}>
       <Stack gap={SECTION_SPACING}>
-        <Flex align={'center'} justify={{ base: 'center', md: 'start' }}>
-          <Anchor component={Link} href={'/'}>
-            <ImageDefault
-              src={images.brand.logo.light}
-              alt={appData.name.app}
-              height={{ base: 40 }}
-              width={{ base: 96 }}
-              fit="contain"
-              mode="grid"
-            />
-          </Anchor>
-        </Flex>
+        <Grid gutter={'xl'}>
+          <GridCol span={{ base: 12, md: 5 }}>
+            <Flex
+              align={{ base: 'center', md: 'start' }}
+              direction={'column'}
+              justify={{ base: 'center', md: 'start' }}
+              gap={'xl'}
+            >
+              <Anchor component={Link} href={'/'}>
+                <ImageDefault
+                  src={images.brand.conference.ai.logo.landscape}
+                  alt={appData.name.app}
+                  height={{ base: 64 }}
+                  width={{ base: 176 }}
+                  fit="contain"
+                />
+              </Anchor>
 
-        <Grid gutter={{ base: 'xl', md: 'md' }}>
-          {linkSets.map((linkSet) => (
-            <GridCol key={linkSet.title} span={{ base: 6, sm: 3 }}>
-              <Flex
-                direction={'column'}
-                align={{ base: 'center', md: 'start' }}
-                gap={'xl'}
-              >
-                <Title order={4} fw={500}>
-                  {linkSet.title}
-                </Title>
+              <Text ta={{ base: 'center', md: 'start' }}>
+                The AI conference in Nairobi is a cutting-edge conference that
+                will bring together thought leaders, innovators, and enthusiasts
+                in the fields of Artificial Intelligence, Drone Technology, and
+                Data Analytics. The event aims to explore the synergies between
+                these rapidly evolving technologies, fostering collaboration,
+                and inspiring the next wave of breakthroughs.
+              </Text>
 
-                <List listStyleType="none" spacing={'md'}>
-                  {linkSet.links.map((link) => (
-                    <ListItem key={link.link} className={classes.listItem}>
-                      <Anchor
-                        component={Link}
-                        href={link.link}
-                        title={link.label}
-                        className={classes.link}
-                      >
-                        {link.label}
-                      </Anchor>
-                    </ListItem>
-                  ))}
-                </List>
-              </Flex>
-            </GridCol>
-          ))}
+              {socialLinks}
+            </Flex>
+          </GridCol>
+
+          <GridCol span={{ base: 12, md: 7 }}>
+            <Grid gutter={{ base: 'xl', md: 'md' }} justify="end">
+              {linkSets.map((linkSet) => (
+                <GridCol key={linkSet.title} span={{ base: 12, xs: 6, md: 5 }}>
+                  <Flex
+                    direction={'column'}
+                    align={{ base: 'center', md: 'start' }}
+                    gap={'xl'}
+                  >
+                    <Title order={4} fw={'bold'} fz={24} c={'pri.6'}>
+                      {linkSet.title}
+                    </Title>
+
+                    <List listStyleType="none" spacing={'md'}>
+                      {linkSet.links.map((link) => (
+                        <ListItem key={link.link} className={classes.listItem}>
+                          <Anchor
+                            component={Link}
+                            href={link.link}
+                            title={link.label}
+                            className={classes.link}
+                          >
+                            {link.label}
+                          </Anchor>
+                        </ListItem>
+                      ))}
+                    </List>
+                  </Flex>
+                </GridCol>
+              ))}
+            </Grid>
+          </GridCol>
         </Grid>
 
-        <Flex
+        {/* <Flex
           direction={{ base: 'column', sm: 'row' }}
           align={{ base: 'center', sm: 'end' }}
           justify={{ sm: 'space-between' }}
@@ -107,18 +127,8 @@ export default function Main() {
             <FormNewsletter />
           </Flex>
 
-          <Group>
-            {dataSocials.map((social) => (
-              <Anchor key={social.link} title={social.label} href={social.link}>
-                <Group>
-                  <ThemeIcon size={ICON_WRAPPER_SIZE} variant="default">
-                    <social.icon size={ICON_SIZE} stroke={ICON_STROKE_WIDTH} />
-                  </ThemeIcon>
-                </Group>
-              </Anchor>
-            ))}
-          </Group>
-        </Flex>
+          {socialLinks}
+        </Flex> */}
       </Stack>
 
       <Divider
@@ -130,41 +140,37 @@ export default function Main() {
       <Stack gap={'lg'} fz={'sm'} ta={{ base: 'center', md: 'start' }} lh={1}>
         <Flex
           align={'center'}
-          justify={{ sm: 'space-between' }}
+          justify={{
+            // sm: 'space-between'
+            sm: 'center',
+          }}
           direction={{ base: 'column', sm: 'row' }}
           gap={'md'}
         >
           <Text component="span" inherit>
-            © {new Date().getFullYear()} {appData.name.app}, Inc. All Rights
-            Reserved.
+            © {new Date().getFullYear()}{' '}
+            <Text component="span" inherit fw={'bold'} c={'sec.6'}>
+              {appData.name.app}
+            </Text>
+            . All Rights Reserved.
           </Text>
 
-          <Group gap={'xs'}>
-            <Anchor
-              component={Link}
-              inherit
-              href="#tc"
-              className={classes.link}
-            >
+          {/* <Group gap={'xs'}>
+            <Anchor inherit href="#tc" className={classes.link}>
               Terms and Conditions
             </Anchor>
 
             <IconCircleFilled size={4} />
 
-            <Anchor
-              component={Link}
-              inherit
-              href="#pp"
-              className={classes.link}
-            >
+            <Anchor inherit href="#pp" className={classes.link}>
               Privacy Policy
             </Anchor>
-          </Group>
+          </Group> */}
         </Flex>
 
-        <Flex justify={{ base: 'center', sm: 'start' }}>
+        {/* <Flex justify={{ base: 'center', sm: 'start' }}>
           <SegmentedControlTheme />
-        </Flex>
+        </Flex> */}
       </Stack>
     </LayoutSection>
   );
@@ -172,43 +178,45 @@ export default function Main() {
 
 const linkSets = [
   {
-    title: 'About Us',
+    title: 'Useful Links',
     links: [
-      { label: 'Mission', link: '#Mission' },
-      { label: 'Our Team', link: '#Team' },
-      { label: 'Awards', link: '#Awards' },
-      { label: 'Testimonials', link: '#Testimonials' },
-      { label: 'Privacy Policy', link: '#Policy' },
-    ],
-  },
-  {
-    title: 'Services',
-    links: [
-      { label: 'Web Design', link: '#Design' },
-      { label: 'Web Development', link: '#Development' },
-      { label: 'Mobile Design', link: '#Mobile' },
-      { label: 'UI/UX Design', link: '#UX' },
-      { label: 'Branding Design', link: '#Branding' },
-    ],
-  },
-  {
-    title: 'Portfolio',
-    links: [
-      { label: 'Corporate Websites', link: '#Corporate' },
-      { label: 'E-commerce', link: '#commerce' },
-      { label: 'Mobile Apps', link: '#Apps' },
-      { label: 'Landing Pages', link: '#Landing' },
-      { label: 'UI/UX Projects', link: '#Projects' },
+      { label: 'Sponsorship Opportunities', link: '/sponsors' },
+      { label: 'Exhibiting & Booths', link: '/exhibit' },
+      { label: 'Event Overview', link: '/' },
+      { label: 'Event Program', link: '/program' },
+      { label: 'Speakers', link: '/speakers' },
     ],
   },
   {
     title: 'Contact Us',
     links: [
-      { label: 'Information', link: '#Information' },
-      { label: 'Request a Quote', link: '#Quote' },
-      { label: 'Consultation', link: '#Consultation' },
-      { label: 'Help Center', link: '#Help' },
-      { label: "T's and C's", link: '#Terms' },
+      {
+        label: appData.locations.main.location,
+        link: appData.locations.main.pin,
+      },
+      { label: appData.emails.info, link: `mailto:${appData.emails.info}` },
+      { label: appData.phones.main, link: `tel:${appData.phones.main}` },
     ],
   },
 ];
+
+const socialLinks = (
+  <Group gap={8}>
+    {socials.map((social) => (
+      <Anchor
+        key={social.link}
+        title={social.label}
+        href={social.link}
+        w={ICON_SIZE + 12}
+        h={ICON_SIZE + 12}
+      >
+        <ImageDefault
+          src={social.image}
+          alt={social.label}
+          height={{ base: ICON_SIZE + 12 }}
+          width={{ Base: ICON_SIZE + 12 }}
+        />
+      </Anchor>
+    ))}
+  </Group>
+);

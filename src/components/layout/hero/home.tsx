@@ -1,109 +1,42 @@
 import React from 'react';
-import {
-  Anchor,
-  BackgroundImage,
-  Box,
-  Button,
-  Center,
-  Group,
-  Paper,
-  Stack,
-  Text,
-  Title,
-} from '@mantine/core';
-import LayoutSection from '@/components/layout/section';
-import {
-  ICON_SIZE,
-  ICON_STROKE_WIDTH,
-  SECTION_SPACING,
-} from '@/data/constants';
-import { IconArrowRight } from '@tabler/icons-react';
-import Link from 'next/link';
+import LayoutSection from '../section';
+import classes from './home.module.scss';
+import { SECTION_SPACING } from '@/data/constants';
+import { Stack, Text } from '@mantine/core';
+import appData from '@/data/app';
+import ImageDefault from '@/components/common/images/default';
+import { images } from '@/assets/images';
 
 export default function Home() {
   return (
-    <BackgroundImage
-      src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      c="white"
-      pos={'relative'}
+    <LayoutSection
+      id="layout-hero"
+      padded={SECTION_SPACING * 1.5}
+      className={classes.hero}
     >
-      <Box
-        pos={'absolute'}
-        left={0}
-        top={0}
-        right={0}
-        bottom={0}
-        bg="linear-gradient(145deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 100%)"
-      />
+      <Stack align="center" gap={SECTION_SPACING / 1.5}>
+        <ImageDefault
+          src={images.brand.conference.ai.logo.landscape}
+          alt={'AI Conference'}
+          height={{ base: 60, sm: 90, md: 120 }}
+          width={{ base: 205, sm: 310, md: 410 }}
+        />
 
-      <LayoutSection id={'page-home-hero'} pos={'relative'} containerized="sm">
-        <Stack
-          justify="center"
-          mih={'100vh'}
-          pt={SECTION_SPACING * 2}
-          pb={SECTION_SPACING}
-          ta={'center'}
-          gap={'xl'}
-        >
-          <Group justify="center">
-            <Anchor component={Link} href={'#hero-home'} c={'white'}>
-              <Paper
-                withBorder
-                bg={'transparent'}
-                radius={'xl'}
-                px={'xs'}
-                py={4}
-                style={{
-                  border: '1.5px solid var(--mantine-color-gray-light)',
-                }}
-              >
-                <Group gap={'xs'}>
-                  <Text>
-                    Announcing our next round of funding.{' '}
-                    <Text component="span" inherit fw={'bold'}>
-                      Read more
-                    </Text>
-                  </Text>
-
-                  <Center visibleFrom="xs">
-                    <IconArrowRight
-                      size={ICON_SIZE}
-                      stroke={ICON_STROKE_WIDTH}
-                    />
-                  </Center>
-                </Group>
-              </Paper>
-            </Anchor>
-          </Group>
-
-          <Title
-            order={1}
-            fz={{ base: 40, xs: 56, sm: 64, md: 72 }}
-            ta={'center'}
-            lh={1}
-          >
-            Data to enrich your online business
-          </Title>
-
-          <Text inherit fz={{ base: 'md', xs: 'lg', sm: 'xl' }}>
-            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-            lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.
+        <Stack gap={'xs'} align="center" ta={'center'} fw={'bold'} lh={1.2}>
+          <Text inherit c={'sec.6'} fz={{ base: 'xl', md: 24 }}>
+            Explore the Fusion of AI, Drones, and Data Analytics
           </Text>
-
-          <Group justify="center">
-            <Button>Get Started</Button>
-            <Button
-              variant="transparent"
-              color={'white'}
-              rightSection={
-                <IconArrowRight size={ICON_SIZE} stroke={ICON_STROKE_WIDTH} />
-              }
-            >
-              Learn More
-            </Button>
-          </Group>
+          <Text inherit fz={{ base: 'lg', xs: 24, md: 32 }}>
+            {appData.locations.main.location}
+          </Text>
+          <Text inherit fz={{ base: 'lg', xs: 24, md: 32 }}>
+            Tue 6th - Wed 7th May, 2025
+          </Text>
+          <Text inherit fw={'normal'} fz={{ base: 'sm', xs: 'md', md: 'lg' }}>
+            {appData.phones.main} | {appData.emails.info}
+          </Text>
         </Stack>
-      </LayoutSection>
-    </BackgroundImage>
+      </Stack>
+    </LayoutSection>
   );
 }

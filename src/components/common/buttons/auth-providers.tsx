@@ -6,57 +6,53 @@ import { Button, Grid, GridCol } from '@mantine/core';
 
 import { images } from '@/assets/images';
 import { capitalizeWords } from '@/utilities/formatters/string';
+import { useOs } from '@mantine/hooks';
+import { Provider } from '@prisma/client';
 import ImageDefault from '@/components/common/images/default';
-import { API_URL, URL_PARAM } from '@/data/constants';
-import { createClient } from '@/libraries/supabase/client';
+import { COOKIE_NAME } from '@/data/constants';
 import { getUrlParam } from '@/utilities/helpers/url';
+import { setCookie } from '@/utilities/helpers/cookie';
 
 export default function Providers() {
   const [loading, setLoading] = useState('');
+  const os = useOs();
 
-  const supabase = createClient();
-
-  const getButton = (providerDetails: { image: string; provider: string }) => {
-    const handleClick = async () => {
-      setLoading(providerDetails.provider);
-      await supabase.auth.signInWithOAuth({
-        provider: providerDetails.provider.toLocaleLowerCase() as any,
-        options: {
-          redirectTo: `${API_URL}/auth/callback/oauth?next=${encodeURIComponent(getUrlParam(URL_PARAM.REDIRECT))}`,
-          // queryParams: {
-          //   access_type: 'offline',
-          //   prompt: 'consent',
-          // },
-        },
-      });
-    };
-
-    return (
-      <Button
-        key={providerDetails.provider}
-        fullWidth
-        variant="default"
-        onClick={handleClick}
-        loading={loading == providerDetails.provider}
-        leftSection={
-          <ImageDefault
-            src={providerDetails.image}
-            alt={providerDetails.provider}
-            height={24}
-            width={24}
-            mode="grid"
-          />
-        }
-      >
-        Continue with {capitalizeWords(providerDetails.provider)}
-      </Button>
-    );
-  };
+  const getButton = (provider: { image: string; provider: Provider }) => (
+    <Button
+      key={provider.provider}
+      fullWidth
+      variant="default"
+      onClick={async () => {
+        setLoading(provider.provider);
+        setCookie(COOKIE_NAME.DEVICE.OS, { os }, { expiryInSeconds: 15 * 60 });
+        window.location.href = `/api/auth/sign-in/google?redirect=${encodeURIComponent(getUrlParam('redirect'))}`;
+      }}
+      loading={loading == provider.provider}
+      leftSection={
+        <ImageDefault
+          src={provider.image}
+          alt={provider.provider}
+          height={24}
+          width={24}
+        />
+      }
+    >
+      {provider.provider != Provider.CREDENTIALS
+        ? capitalizeWords(provider.provider)
+        : 'Email (SSO)'}
+    </Button>
+  );
 
   return (
     <Grid>
       {providers.map((provider) => (
-        <GridCol key={provider.provider} span={{ base: 12 }}>
+        <GridCol
+          key={provider.provider}
+          span={{
+            base: 12,
+            xs: provider.provider != Provider.CREDENTIALS ? 6 : undefined,
+          }}
+        >
           {getButton(provider)}
         </GridCol>
       ))}
@@ -66,11 +62,15 @@ export default function Providers() {
 
 const providers = [
   {
+    image: images.icons.credentials,
+    provider: Provider.CREDENTIALS,
+  },
+  {
     image: images.icons.google,
-    provider: 'google',
+    provider: Provider.GOOGLE,
   },
   {
     image: 'https://img.icons8.com/?size=100&id=16318&format=png&color=000000',
-    provider: 'github',
+    provider: Provider.GITHUB,
   },
 ];

@@ -16,7 +16,7 @@ import { IconChevronUp } from '@tabler/icons-react';
 export default function Top({
   position = {
     bottom: 'var(--mantine-spacing-xl)',
-    right: 'var(--mantine-spacing-xl)',
+    right: 0,
   },
   ...restProps
 }: { position?: AffixBaseProps['position'] } & Omit<
@@ -32,7 +32,14 @@ export default function Top({
         transition={'slide-left'}
         mounted={scroll.y > 0 && !pinned}
       >
-        <ActionIcon size={ICON_WRAPPER_SIZE} onClick={() => scrollTo({ y: 0 })}>
+        <ActionIcon
+          size={ICON_WRAPPER_SIZE}
+          onClick={() => scrollTo({ y: 0 })}
+          style={{
+            borderTopRightRadius: 0,
+            borderBottomRightRadius: 0,
+          }}
+        >
           <IconChevronUp size={ICON_SIZE} stroke={ICON_STROKE_WIDTH} />
         </ActionIcon>
       </WrapperTransition>
