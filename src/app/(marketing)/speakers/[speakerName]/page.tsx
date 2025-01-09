@@ -19,7 +19,7 @@ import {
   Title,
 } from '@mantine/core';
 import { people } from '@/data/people';
-import { linkify } from '@repo/utils/formatters';
+import { linkify } from '@/utilities/formatters/string';
 import ImageDefault from '@/components/common/images/default';
 import { socials } from '@/data/social';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import LayoutBody from '@/components/layout/body';
 import { people } from '@/data/people';
-import { linkify } from '@repo/utils/formatters';
+import { linkify } from '@/utilities/formatters/string';
 
 export interface typeParams {
   params: { speakerName: string };

@@ -1,6 +1,6 @@
 .link {
-  padding: calc(var(--mantine-spacing-md) * 1.5) 0;
-  font-size: var(--mantine-font-size-sm);
+  padding: calc(var(--mantine-spacing-md) * 1.5) 0 !important;
+  font-size: var(--mantine-font-size-sm) !important;
   color: var(--mantine-color-text) !important;
   transition: 0.25s color ease;
 
@@ -10,8 +10,8 @@
 }
 
 .linkAbsolute {
-  padding: calc(var(--mantine-spacing-md) * 1.5) 0;
-  font-size: var(--mantine-font-size-sm);
+  padding: calc(var(--mantine-spacing-md) * 1.5) 0 !important;
+  font-size: var(--mantine-font-size-sm) !important;
   color: var(--mantine-color-white) !important;
   transition: 0.25s color ease;
   font-weight: bold;

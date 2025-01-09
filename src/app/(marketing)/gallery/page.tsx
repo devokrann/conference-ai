@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { Grid, GridCol, Stack } from '@mantine/core';
 import LayoutPage from '@/components/layout/page';
 import LayoutSection from '@/components/layout/section';
-import { shuffleArray } from '@repo/utils/helpers';
+import { shuffleArray } from '@/utilities/helpers/array';
 import ModalImage from '@/components/common/modals/image';
 import { gallery } from '@/data/gallery';
 

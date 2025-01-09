@@ -321,6 +321,25 @@ export const images = {
     },
   },
 
+  partners: {
+    media: {
+      image1: `${baseUrl.conference}/partners/media/media-1.webp`,
+      image2: `${baseUrl.conference}/partners/media/media-2.webp`,
+      image3: `${baseUrl.conference}/partners/media/media-3.webp`,
+      image4: `${baseUrl.conference}/partners/media/media-4.webp`,
+      image5: `${baseUrl.conference}/partners/media/media-5.webp`,
+      image6: `${baseUrl.conference}/partners/media/media-6.png`,
+      image7: `${baseUrl.conference}/partners/media/media-7.png`,
+      image8: `${baseUrl.conference}/partners/media/media-8.jpg`,
+      image9: `${baseUrl.conference}/partners/media/media-9.png`,
+      image10: `${baseUrl.conference}/partners/media/media-10.webp`,
+      image11: `${baseUrl.conference}/partners/media/media-11.webp`,
+      image12: `${baseUrl.conference}/partners/media/media-12.webp`,
+      image13: `${baseUrl.conference}/partners/media/media-13.webp`,
+      image14: `${baseUrl.conference}/partners/media/media-14.webp`,
+    },
+  },
+
   people: {
     michaelZimba: `${baseUrl.conference}/people/speaker-1.webp`,
     michaelMichie: `${baseUrl.conference}/people/speaker-2.webp`,

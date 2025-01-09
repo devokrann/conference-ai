@@ -16,7 +16,7 @@ export default function Home() {
     >
       <Stack align="center" gap={SECTION_SPACING / 1.5}>
         <ImageDefault
-          src={images.brand.conference.ai.logo.landscape}
+          src={images.brand.conference.logo.landscape.light}
           alt={'AI Conference'}
           height={{ base: 60, sm: 90, md: 120 }}
           width={{ base: 205, sm: 310, md: 410 }}

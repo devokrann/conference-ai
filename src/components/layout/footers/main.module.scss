@@ -12,7 +12,10 @@
 }
 
 .link {
-  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-gray-6));
+  color: light-dark(
+    var(--mantine-color-gray-6),
+    var(--mantine-color-gray-6)
+  ) !important;
 
   @include hover {
     color: var(--mantine-color-sec-6) !important;

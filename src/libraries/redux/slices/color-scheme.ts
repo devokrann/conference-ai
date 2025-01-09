@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const sliceColorScheme = createSlice({
   name: 'color-scheme',
   initialState: {
-    value: 'light',
+    value: 'dark',
   },
   reducers: {
     update: (state, action) => {

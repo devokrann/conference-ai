@@ -20,14 +20,14 @@ import { useMediaQuery } from '@mantine/hooks';
 
 import AvatarMain from '../avatars/main';
 
-import classes from './avatar.module.scss';
+import classes from './user.module.scss';
 import { navLinkItems } from '@/components/layout/asides/account';
 import { ICON_SIZE, ICON_STROKE_WIDTH } from '@/data/constants';
 import { useAppSelector } from '@/hooks/redux';
 import { usePathname } from 'next/navigation';
 // import { getRegionalDate } from '@/utilities/formatters/date';
 
-export default function Avatar() {
+export default function User() {
   const session = useAppSelector((state) => state.session.value);
 
   const mobile = useMediaQuery('(max-width: 48em)');
@@ -69,10 +69,10 @@ export default function Avatar() {
           session && (
             <Stack gap={4} p={'md'}>
               <Title order={3} fz={'md'} lh={1} ta={'center'}>
-                {session.user.name}
+                {session.user_metadata.name}
               </Title>
               <Text fz={'sm'} ta={'center'}>
-                {session.user.email}
+                {session.email}
               </Text>
 
               {/* <Text fz={'xs'} ta={'center'}>

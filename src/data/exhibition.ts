@@ -204,7 +204,7 @@ export const exhibition = {
     },
     {
       name: 'Drone Space Kenya',
-      image: images.brand.droneSpace.full.white.portrait,
+      image: images.brand.droneSpace.logo.potrait.white,
       width: '70%',
     },
   ],

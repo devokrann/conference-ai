@@ -212,7 +212,7 @@ export default function Home() {
 											noPadding
 										/> */}
                       <Image
-                        src={images.brand.droneSpace.full.white.landscape}
+                        src={images.brand.droneSpace.logo.landscape.white}
                         alt="Drone Space"
                       />
                     </GridCol>

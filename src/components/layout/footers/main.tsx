@@ -48,7 +48,7 @@ export default function Main() {
             >
               <Anchor component={Link} href={'/'}>
                 <ImageDefault
-                  src={images.brand.conference.ai.logo.landscape}
+                  src={images.brand.conference.logo.landscape.light}
                   alt={appData.name.app}
                   height={{ base: 64 }}
                   width={{ base: 176 }}

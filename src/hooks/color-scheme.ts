@@ -36,7 +36,7 @@ export const useColorSchemeHandler = () => {
     const cookieValueState = getCookie(COOKIE_NAME.COLOR_SCHEME_STATE);
 
     if (!cookieValueState) {
-      setCookie(COOKIE_NAME.COLOR_SCHEME_STATE, 'light', {
+      setCookie(COOKIE_NAME.COLOR_SCHEME_STATE, 'dark', {
         expiryInSeconds: EXPIRY.SESSION.EXTENDED.SEC,
       });
     }
@@ -44,13 +44,13 @@ export const useColorSchemeHandler = () => {
     const cookieValue = getCookie(COOKIE_NAME.COLOR_SCHEME);
 
     if (!cookieValue) {
-      setCookie(COOKIE_NAME.COLOR_SCHEME, 'light', {
+      setCookie(COOKIE_NAME.COLOR_SCHEME, 'dark', {
         expiryInSeconds: EXPIRY.SESSION.EXTENDED.SEC,
       });
     }
 
-    dispatch(updateColorScheme(cookieValueState || 'light'));
-    setColorScheme((cookieValue as MantineColorScheme) || 'light');
+    dispatch(updateColorScheme(cookieValueState || 'dark'));
+    setColorScheme((cookieValue as MantineColorScheme) || 'dark');
   });
 
   return { colorScheme, handleChange };

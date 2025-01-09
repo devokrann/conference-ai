@@ -10,5 +10,5 @@ export const getOSTheme = () => {
     return 'dark';
   }
 
-  return 'light';
+  return 'dark';
 };

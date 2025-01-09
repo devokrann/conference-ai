@@ -72,7 +72,7 @@ export default function Main({
   const imageBrand = (
     <Anchor component={Link} href={'/'}>
       <ImageDefault
-        src={images.brand.conference.ai.logo.landscape}
+        src={images.brand.conference.logo.landscape.light}
         alt={appData.name.app}
         height={{ base: 56 }}
         width={{ base: 160 }}
