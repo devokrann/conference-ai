@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Button, Divider, Stack, Text, Title } from '@mantine/core';
 import classes from './ticket.module.scss';

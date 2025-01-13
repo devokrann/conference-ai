@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ICON_SIZE,
   ICON_STROKE_WIDTH,

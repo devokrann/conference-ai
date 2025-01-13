@@ -1,3 +1,5 @@
+'use client';
+
 import { useCountryData } from '@/hooks/country-data';
 import React from 'react';
 import {

@@ -1,3 +1,5 @@
+'use client';
+
 import { useDisclosure } from '@mantine/hooks';
 import { Modal, Button, Text } from '@mantine/core';
 import FormBooth from '@/components/form/booth';

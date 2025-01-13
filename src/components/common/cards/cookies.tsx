@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Anchor, Button, Card, Group, Stack, Text } from '@mantine/core';
 import Link from 'next/link';

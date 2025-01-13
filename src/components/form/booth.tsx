@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect } from 'react';
 // import ReactDOMServer from 'react-dom/server';
 // import Link from 'next/link';
