@@ -9,6 +9,7 @@ export const categoriesGet = async () => {
       method: EnumRequest.GET,
       credentials: 'include',
       headers: HEADERS.WITHOUT_BODY,
+      cache: 'no-store',
     });
 
     const response = await fetch(request);
@@ -22,9 +23,9 @@ export const categoriesGet = async () => {
   }
 };
 
-export const categoryGet = async (slug: { categoryId: string }) => {
+export const categoryGet = async (params: { categoryId: string }) => {
   try {
-    const request = new Request(`${baseRequestUrl}/${slug.categoryId}`, {
+    const request = new Request(`${baseRequestUrl}/${params.categoryId}`, {
       method: EnumRequest.GET,
       credentials: 'include',
       headers: HEADERS.WITHOUT_BODY,
