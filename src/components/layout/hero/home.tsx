@@ -13,6 +13,7 @@ export default function Home() {
       id="layout-hero"
       padded={SECTION_SPACING * 1.5}
       className={classes.hero}
+      containerized={'md'}
     >
       <Stack align="center" gap={SECTION_SPACING / 1.5}>
         <ImageDefault
@@ -21,6 +22,16 @@ export default function Home() {
           height={{ base: 60, sm: 90, md: 120 }}
           width={{ base: 205, sm: 310, md: 410 }}
         />
+
+        <Text
+          inherit
+          fz={{ base: 'xs', xs: 'sm', sm: 'md', md: 'lg' }}
+          ta={'center'}
+        >
+          Following the success of the 2024 AI Conference Nairobi, which
+          attracted over 900 attendees, Drone Space is excited to announce that
+          it will host the 2nd AI Conference Nairobi on May 6th and 7th, 2025.
+        </Text>
 
         <Stack gap={'xs'} align="center" ta={'center'} fw={'bold'} lh={1.2}>
           <Text inherit c={'sec.6'} fz={{ base: 'xl', md: 24 }}>
