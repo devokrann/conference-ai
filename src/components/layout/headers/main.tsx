@@ -20,7 +20,7 @@ export default function Main() {
     >
       <Group justify="space-between" fw={'bold'} fz={'sm'}>
         <Group gap={'xs'}>
-          <Text inherit>6th - 7th May, 2025</Text> |{' '}
+          {/* <Text inherit>6th - 7th May, 2025</Text> |{' '} */}
           <Text inherit>{appData.locations.main.location}</Text>
         </Group>
 

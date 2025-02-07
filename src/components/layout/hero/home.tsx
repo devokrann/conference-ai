@@ -30,7 +30,8 @@ export default function Home() {
         >
           Following the success of the 2024 AI Conference Nairobi, which
           attracted over 900 attendees, Drone Space is excited to announce that
-          it will host the 2nd AI Conference Nairobi on May 6th and 7th, 2025.
+          it will host the 2nd AI Conference Nairobi
+          {/* on May 6th and 7th, 2025. */}
         </Text>
 
         <Stack gap={'xs'} align="center" ta={'center'} fw={'bold'} lh={1.2}>
@@ -40,9 +41,9 @@ export default function Home() {
           <Text inherit fz={{ base: 'lg', xs: 24, md: 32 }}>
             {appData.locations.main.location}
           </Text>
-          <Text inherit fz={{ base: 'lg', xs: 24, md: 32 }}>
+          {/* <Text inherit fz={{ base: 'lg', xs: 24, md: 32 }}>
             Tue 6th - Wed 7th May, 2025
-          </Text>
+          </Text> */}
           <Text inherit fw={'normal'} fz={{ base: 'sm', xs: 'md', md: 'lg' }}>
             {appData.phones.main} | {appData.emails.info}
           </Text>
