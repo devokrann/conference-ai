@@ -190,10 +190,10 @@ const linkSets = [
   {
     title: 'Contact Us',
     links: [
-      {
-        label: appData.locations.main.location,
-        link: appData.locations.main.pin,
-      },
+      // {
+      //   label: appData.locations.main.location,
+      //   link: appData.locations.main.pin,
+      // },
       { label: appData.emails.info, link: `mailto:${appData.emails.info}` },
       { label: appData.phones.main, link: `tel:${appData.phones.main}` },
     ],
