@@ -1,6 +1,8 @@
+'use client';
+
 import React from 'react';
 
-import { Grid, GridCol, Stack, Title } from '@mantine/core';
+import { Grid, GridCol, Group, Pagination, Stack, Title } from '@mantine/core';
 import LayoutPage from '@/components/layout/page';
 import LayoutSection from '@/components/layout/section';
 import SpeakerListing from '@/components/common/cards/speaker/listing';
@@ -12,15 +14,22 @@ import AccordionProgram from '@/components/common/accordions/program';
 import { program } from '@/data/program';
 import ModalImage from '@/components/common/modals/image';
 import { gallery } from '@/data/gallery';
-import { shuffleArray } from '@/utilities/helpers/array';
-import { Metadata } from 'next';
+import { usePaginate } from '@/hooks/paginate';
+// import { Metadata } from 'next';
 
-export const metadata: Metadata = { title: '2024' };
+// export const metadata: Metadata = { title: '2024' };
 
 export default function Yr2024() {
+  const list = gallery.conference.concat(gallery.expo);
+  const divisor = 12;
+  const { items, totalPages, activePage, setActivePage } = usePaginate(
+    list,
+    divisor
+  );
+
   return (
     <LayoutPage>
-      <LayoutSection id="page-speakers" padded>
+      <LayoutSection id="page-speakers" padded bordered>
         <IntroSection
           props={{
             title: 'Speakers',
@@ -42,11 +51,7 @@ export default function Yr2024() {
         </Grid>
       </LayoutSection>
 
-      <LayoutSection
-        id="exhibitors"
-        bg={'var(--mantine-color-pri-light)'}
-        padded
-      >
+      <LayoutSection id="exhibitors" padded bordered>
         <IntroSection
           props={{
             title: 'Exhibitors',
@@ -65,7 +70,7 @@ export default function Yr2024() {
         </Grid>
       </LayoutSection>
 
-      <LayoutSection id="program" padded>
+      <LayoutSection id="program" padded bordered>
         <IntroSection
           props={{
             title: 'Program',
@@ -95,7 +100,7 @@ export default function Yr2024() {
         </Grid>
       </LayoutSection>
 
-      <LayoutSection id="gallery" bg={'var(--mantine-color-gray-light)'} padded>
+      <LayoutSection id="gallery" padded>
         <IntroSection
           props={{
             title: 'Gallery',
@@ -105,15 +110,22 @@ export default function Yr2024() {
           options={{ spacing: true }}
         />
 
-        <Grid justify="center" gutter={0}>
-          {shuffleArray(gallery.conference)
-            .concat(shuffleArray(gallery.expo))
-            .map((item) => (
-              <GridCol key={item.image} span={{ base: 12, xs: 4, md: 3 }}>
-                <ModalImage image={item.image} />
-              </GridCol>
-            ))}
+        <Grid justify="center" gutter={'xs'}>
+          {items.map((item) => (
+            <GridCol key={item.image} span={{ base: 12, xs: 4, md: 3 }}>
+              <ModalImage image={item.image} />
+            </GridCol>
+          ))}
         </Grid>
+
+        <Group justify="center" mt={'xl'}>
+          <Pagination
+            size={'sm'}
+            value={activePage}
+            onChange={setActivePage}
+            total={totalPages}
+          />
+        </Group>
       </LayoutSection>
     </LayoutPage>
   );
