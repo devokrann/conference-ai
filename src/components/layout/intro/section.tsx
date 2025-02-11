@@ -21,7 +21,7 @@ export default function Section({
           <Text
             fw={'bold'}
             ta={options?.alignment || 'center'}
-            c={'pri.6'}
+            c={'sec.4'}
             tt={'uppercase'}
             fz={'sm'}
           >
@@ -36,7 +36,7 @@ export default function Section({
           mb={options?.spacing ? SECTION_SPACING : undefined}
         >
           <Stack>
-            <Title order={2} ta={options?.alignment || 'center'}>
+            <Title order={2} ta={options?.alignment || 'center'} c={'pri.6'}>
               {props.title}
             </Title>
 
