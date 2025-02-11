@@ -41,7 +41,9 @@ export default function Section({
             </Title>
 
             {props.desc && (
-              <Text ta={options?.alignment || 'center'}>{props.desc}</Text>
+              <Text ta={options?.alignment || 'center'} fz={'sm'}>
+                {props.desc}
+              </Text>
             )}
           </Stack>
         </LayoutSection>
