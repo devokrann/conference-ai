@@ -13,8 +13,8 @@ export default async function Gallery() {
   return (
     <LayoutPage>
       <LayoutSection id="page-gallery" containerized={false}>
-        <Stack gap={48}>
-          <Grid justify="center" gutter={0}>
+        <Stack gap={48} p={'xs'}>
+          <Grid justify="center" gutter={'xs'}>
             {shuffleArray(gallery.conference.concat(gallery.expo)).map(
               (item) => (
                 <GridCol key={item.image} span={{ base: 12, xs: 4, md: 3 }}>
