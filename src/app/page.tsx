@@ -41,15 +41,16 @@ export default function Home() {
         <LayoutPage>
           <LayoutSection id="page-home" padded>
             <Stack gap={48}>
-              <Stack ta={'center'} gap={'xl'}>
+              <Stack ta={'center'} gap={'xl'} align="center">
                 <Title order={2} fz={40} c={'sec'}>
                   Explore The Fusion of AI, Drones, and Data Analytics
                 </Title>
-                <Text>
-                  The AI conference in Nairobi is a cutting-edge conference that
-                  will bring together thought leaders, innovators, and
-                  enthusiasts in the fields of Artificial Intelligence, Drone
-                  Technology, and Data Analytics.
+
+                <Text w={{ md: '75%' }}>
+                  The AI conference in Nairobi is a cutting-edge event that
+                  brings together thought leaders, innovators, and enthusiasts
+                  in Artificial Intelligence, Drone Technology, and Data
+                  Analytics.
                 </Text>
               </Stack>
 

@@ -14,8 +14,9 @@ export default function Image({ image }: { image: string }) {
         <ImageDefault
           src={image}
           alt={'gallery image'}
-          height={{ base: 380 }}
-          fit="contain"
+          height={{ base: 180, xs: 320, md: 380 }}
+          width={{ base: '100%' }}
+          // fit="contain"
           radius={'sm'}
         />
       </Modal>
@@ -24,7 +25,7 @@ export default function Image({ image }: { image: string }) {
         <ImageDefault
           src={image}
           alt={'gallery image'}
-          height={{ base: 180 }}
+          height={{ base: 200 }}
           className={classes.imageOuter}
         />
       </Box>
