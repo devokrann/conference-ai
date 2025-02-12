@@ -1,8 +1,5 @@
-'use client';
-
 import React from 'react';
-
-import { Grid, GridCol, Group, Pagination, Stack, Title } from '@mantine/core';
+import { Grid, GridCol, Stack, Title } from '@mantine/core';
 import LayoutPage from '@/components/layout/page';
 import LayoutSection from '@/components/layout/section';
 import SpeakerListing from '@/components/common/cards/speaker/listing';
@@ -12,20 +9,18 @@ import CardSponsor from '@/components/common/cards/sponsor';
 import IntroSection from '@/components/layout/intro/section';
 import AccordionProgram from '@/components/common/accordions/program';
 import { program } from '@/data/program';
-import ModalImage from '@/components/common/modals/image';
+import HeroPastYr2024 from '@/components/layout/hero/past/yr2024';
+import PartialGallery from '@/components/partial/gallery';
+import CardObjective from '@/components/common/cards/objective';
+import CardAudience from '@/components/common/cards/audience';
+import { Metadata } from 'next';
 import { gallery } from '@/data/gallery';
-import { usePaginate } from '@/hooks/paginate';
-// import { Metadata } from 'next';
+import { content } from '@/data/content';
 
-// export const metadata: Metadata = { title: '2024' };
+export const metadata: Metadata = { title: '2024' };
 
 export default function Yr2024() {
   const list = gallery.conference.concat(gallery.expo);
-  const divisor = 12;
-  const { items, totalPages, activePage, setActivePage } = usePaginate(
-    list,
-    divisor
-  );
 
   return (
     <LayoutPage>
@@ -110,22 +105,7 @@ export default function Yr2024() {
           options={{ spacing: true }}
         />
 
-        <Grid justify="center" gutter={'xs'}>
-          {items.map((item) => (
-            <GridCol key={item.image} span={{ base: 12, xs: 4, md: 3 }}>
-              <ModalImage image={item.image} />
-            </GridCol>
-          ))}
-        </Grid>
-
-        <Group justify="center" mt={'xl'}>
-          <Pagination
-            size={'sm'}
-            value={activePage}
-            onChange={setActivePage}
-            total={totalPages}
-          />
-        </Group>
+        <PartialGallery props={{ list }} />
       </LayoutSection>
     </LayoutPage>
   );
