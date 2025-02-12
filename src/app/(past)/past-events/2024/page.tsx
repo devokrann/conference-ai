@@ -16,6 +16,10 @@ import CardAudience from '@/components/common/cards/audience';
 import { Metadata } from 'next';
 import { gallery } from '@/data/gallery';
 import { content } from '@/data/content';
+import { partners } from '@/data/partners';
+import { sponsorship } from '@/data/sponsorship';
+import CardPartner from '@/components/common/cards/partner';
+import CardExhibitor from '@/components/common/cards/exhibitor';
 
 export const metadata: Metadata = { title: '2024' };
 
@@ -24,11 +28,51 @@ export default function Yr2024() {
 
   return (
     <LayoutPage>
-      <LayoutSection id="page-speakers" padded bordered>
+      <HeroPastYr2024 />
+
+      <LayoutSection id="objectives" padded bordered>
+        <IntroSection
+          props={{
+            title: 'Objectives',
+            desc: 'From fostering collaboration among professionals to showcasing the latest advancements in AI, these goals were designed to drive meaningful discussions, spark innovation, and empower participants to shape the future of artificial intelligence.',
+            subTitle: '2024',
+          }}
+          options={{ spacing: true }}
+        />
+
+        <Grid justify="center">
+          {content.objectives.map((objective) => (
+            <GridCol key={objective.title} span={{ base: 12, sm: 6, md: 4 }}>
+              <CardObjective data={objective} />
+            </GridCol>
+          ))}
+        </Grid>
+      </LayoutSection>
+
+      <LayoutSection id="audience" padded bordered>
+        <IntroSection
+          props={{
+            title: 'Target Audience',
+            desc: 'Our AI Conference is designed to cater to a diverse and dynamic audience, bringing together professionals, enthusiasts, and organizations from across the AI ecosystem.',
+            subTitle: '2024',
+          }}
+          options={{ spacing: true }}
+        />
+
+        <Grid justify="center">
+          {content.whoAttends.map((item) => (
+            <GridCol key={item.title} span={{ base: 12, sm: 6, md: 4 }}>
+              <CardAudience data={item} />
+            </GridCol>
+          ))}
+        </Grid>
+      </LayoutSection>
+
+      <LayoutSection id="speakers" padded bordered>
         <IntroSection
           props={{
             title: 'Speakers',
-            desc: 'Each speaker brought unique insights, groundbreaking ideas, and real-world applications of AI, making this event a hub for learning and inspiration.',
+            desc: 'These experts shared their knowledge and perspectives on AI, drone technology, and data analytics, with representation from Kenya and other global hubs of innovation.',
             subTitle: '2024',
           }}
           options={{ spacing: true }}
@@ -57,9 +101,9 @@ export default function Yr2024() {
         />
 
         <Grid>
-          {exhibition.exhibitors.map((exhibitor) => (
-            <GridCol span={{ base: 6, xs: 4, md: 3 }} key={exhibitor.name}>
-              <CardSponsor data={exhibitor} />
+          {exhibition.exhibitors.map((exhibitor, index) => (
+            <GridCol key={index} span={{ base: 6, xs: 4, md: 3 }}>
+              <CardExhibitor data={exhibitor} />
             </GridCol>
           ))}
         </Grid>
@@ -79,7 +123,7 @@ export default function Yr2024() {
           <GridCol span={{ base: 12, sm: 6 }}>
             <Stack gap={'xl'}>
               <Title ta={'center'} order={3} fz={'xl'}>
-                26<sup>th</sup> March (Day I)
+                26<sup>th</sup> March, 2024 (Day I)
               </Title>
               <AccordionProgram data={program.schedule.day1} />
             </Stack>
@@ -87,11 +131,36 @@ export default function Yr2024() {
           <GridCol span={{ base: 12, sm: 6 }}>
             <Stack gap={'xl'}>
               <Title ta={'center'} order={3} fz={'xl'}>
-                27<sup>th</sup> March (Day II)
+                27<sup>th</sup> March, 2024 (Day II)
               </Title>
               <AccordionProgram data={program.schedule.day2} />
             </Stack>
           </GridCol>
+        </Grid>
+      </LayoutSection>
+
+      <LayoutSection id="sponsors-partners" padded bordered>
+        <IntroSection
+          props={{
+            title: 'Sponsors & Partners',
+            desc: 'Their support enabled us to bring together top experts, showcase groundbreaking technologies, and create a platform for meaningful discussions.',
+            subTitle: '2024',
+          }}
+          options={{ spacing: true }}
+        />
+
+        <Grid>
+          {partners.map((partner, index) => (
+            <GridCol key={index} span={{ base: 6, sm: 4 }}>
+              <CardPartner data={partner} />
+            </GridCol>
+          ))}
+
+          {sponsorship.sponsors.map((partner, index) => (
+            <GridCol key={index} span={{ base: 6, sm: 4 }}>
+              <CardSponsor data={partner} />
+            </GridCol>
+          ))}
         </Grid>
       </LayoutSection>
 
