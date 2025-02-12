@@ -117,24 +117,22 @@ export const sponsorship = {
   ],
   sponsors: [
     {
-      name: 'Safaricom',
+      title: 'Safaricom',
+      desc: 'Generous sponsorship enhanced the overall conference experience.',
       image: images.partners.media.image10,
-      width: '70%',
+      width: '35%',
     },
     {
-      name: 'Kenya Airways',
+      title: 'Kenya Airways & Fahari Aviation',
+      desc: 'Our Travel Partners, Kenya Airways facilitated the seamless participation of international speakers, enriching the conference with diverse global insights.',
       image: images.partners.media.image14,
-      width: '80%',
+      width: '60%',
     },
     {
-      name: 'Fahari Abviation',
-      image: images.partners.media.image11,
-      width: '70%',
-    },
-    {
-      name: 'Wapi Pay',
+      title: 'Wapi Pay',
+      desc: 'Supported innovation with Hackathon sponsorship, incentivizing cutting-edge solutions.',
       image: images.companies.wapiPay,
-      width: '70%',
+      width: '50%',
     },
   ],
 };
