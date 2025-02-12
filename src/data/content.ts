@@ -47,27 +47,27 @@ export const content = {
     {
       icon: IconHeartHandshake,
       title: 'Collaborate',
-      desc: 'Foster collaboration and networking among professionals in AI, Drone Tech, and Data Analytics.',
+      desc: 'Fostered collaboration and networking among professionals in AI, Drone Tech, and Data Analytics.',
     },
     {
       icon: IconBrandAirtable,
       title: 'Exhibit',
-      desc: 'Showcase the latest advancements and applications in AI, Drone Technology, and Data Analytics.',
+      desc: 'Showcased the latest advancements and applications in AI, Drone Technology, and Data Analytics.',
     },
     {
       icon: IconStairsUp,
       title: 'Startup Support',
-      desc: 'Provide a platform for startups to showcase their innovative solutions.',
+      desc: 'Provided a platform for startups to showcase their innovative solutions.',
     },
     {
       icon: IconMicrophone2,
       title: 'Talks',
-      desc: 'Facilitate knowledge exchange through keynotes, panel discussions, and interactive workshops.',
+      desc: 'Facilitated knowledge exchange through keynotes, panel discussions, and interactive workshops.',
     },
     {
       icon: IconBulb,
       title: 'Enlighten',
-      desc: 'Inspire and motivate attendees to explore the intersections of AI, Drone Tech, and Data for future innovations.',
+      desc: 'Inspired and motivated attendees to explore the intersections of AI, Drone Tech, and Data for future innovations.',
     },
   ],
 
