@@ -1,24 +1,33 @@
 import React from 'react';
 
-import { Center, Image, Text } from '@mantine/core';
-
-import classes from './partner.module.scss';
+import { Card, Group, Stack, Text, Title } from '@mantine/core';
+import ImageDefault from '../images/default';
 
 export default function Partner({
   data,
-  noPadding,
 }: {
-  data: { image: string; title: string; width?: string };
+  data: { image: string; title: string; desc: string; width?: string };
   noPadding?: boolean;
 }) {
   return (
-    <Center className={classes.card} p={noPadding ? undefined : 'xl'}>
-      <Image
-        src={data.image}
-        alt={data.title}
-        w={data.width ? data.width : '100%'}
-      />
-      <Text className={classes.label}>{data.title}</Text>
-    </Center>
+    <Card bg={'transparent'} padding={'lg'} h={'100%'} withBorder shadow="xs">
+      <Stack>
+        <Group mih={80}>
+          <ImageDefault
+            src={data.image}
+            alt={data.title}
+            height={{ base: 64 }}
+            width={{ base: data.width ? data.width : '100%' }}
+            fit="contain"
+          />
+        </Group>
+
+        <Title order={3} fz={'lg'} c={'sec.4'}>
+          {data.title}
+        </Title>
+
+        <Text>{data.desc}</Text>
+      </Stack>
+    </Card>
   );
 }

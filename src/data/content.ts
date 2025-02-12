@@ -42,6 +42,7 @@ export const content = {
       desc: 'The integration of AI, Drones and Data creates synergies that amplify the capabilities of each component where this convergence is driving innovation such as precision agriculture, disaster response and infrastructure inspection. As we navigate the opportunities presented by this synergy, it is essential to strike a balance between innovation and responsible use, fostering a future where these technologies benefit society at large.',
     },
   ],
+
   objectives: [
     {
       icon: IconHeartHandshake,
@@ -69,32 +70,40 @@ export const content = {
       desc: 'Inspire and motivate attendees to explore the intersections of AI, Drone Tech, and Data for future innovations.',
     },
   ],
+
   whoAttends: [
     {
       icon: IconCpu,
-      title: 'Technology enthusiasts and professionals',
+      title: 'Technology Enthusiasts and Professionals',
+      desc: 'Individuals passionate about technology and its applications found the conference stimulating and informative.',
     },
     {
       icon: IconBuildingFactory,
-      title: 'Industry leaders and decision – Makers',
+      title: 'Industry Leaders and Decision Makers',
+      desc: 'The event drew senior executives and decision-makers seeking to understand how to leverage these technologies for competitive advantage.',
     },
     {
       icon: IconFileTextAi,
-      title: 'AI Researchers and developers',
+      title: 'AI Researchers and Developers',
+      desc: 'The conference offered a valuable forum for AI experts to share their latest research and connect with potential collaborators.',
     },
     {
       icon: IconDrone,
-      title: 'Drone technology Experts',
+      title: 'Drone Technology Experts & Enthusiasts',
+      desc: 'Drone enthusiasts, pilots, and manufacturers benefited from the insights and demonstrations centered around drone applications.',
     },
     {
       icon: IconTrendingUp,
-      title: 'Startups and entrepreneurs in tech space',
+      title: 'Startups and Entrepreneurs in Tech Space',
+      desc: 'The conference provided a launchpad for early-stage tech startups to gain visibility and forge strategic connections.',
     },
     {
       icon: IconDatabaseSearch,
       title: 'Data Scientists and Analysts',
+      desc: 'Data professionals discovered new techniques and tools for harnessing the power of data within the context of AI and drone technology.',
     },
   ],
+
   whyAttend: [
     {
       icon: IconBrandAirtable,

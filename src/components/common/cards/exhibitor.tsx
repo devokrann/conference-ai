@@ -1,27 +1,24 @@
 import React from 'react';
 
-import { Group, Image } from '@mantine/core';
-
-import classes from './exhibitor.module.scss';
+import { Card, Center } from '@mantine/core';
+import ImageDefault from '../images/default';
 
 export default function Exhibitor({
   data,
 }: {
-  data: { image: string; name: string; width: string; bg?: string };
+  data: { image: string; title: string; width: string; bg?: string };
 }) {
   return (
-    <Group
-      justify="center"
-      mih={200}
-      className={classes.card}
-      bg={data.bg && data.bg}
-    >
-      <Image
-        src={data.image}
-        alt={data.name}
-        w={data.width}
-        className={classes.image}
-      />
-    </Group>
+    <Card bg={data.bg ? data.bg : 'var(--mantine-color-gray-light)'}>
+      <Center mih={120}>
+        <ImageDefault
+          src={data.image}
+          alt={data.title}
+          height={{ base: 64 }}
+          width={{ base: data.width }}
+          fit="contain"
+        />
+      </Center>
+    </Card>
   );
 }
