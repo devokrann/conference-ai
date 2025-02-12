@@ -53,7 +53,7 @@ export default function Yr2024() {
         <IntroSection
           props={{
             title: 'Target Audience',
-            desc: 'Our AI Conference is designed to cater to a diverse and dynamic audience, bringing together professionals, enthusiasts, and organizations from across the AI ecosystem.',
+            desc: 'Our AI Conference was designed to cater to a diverse and dynamic audience, bringing together professionals, enthusiasts, and organizations from across the AI ecosystem.',
             subTitle: '2024',
           }}
           options={{ spacing: true }}
