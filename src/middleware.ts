@@ -1,17 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { updateSession } from './libraries/supabase/middleware';
 import {
-  // createRedirectHandler,
+  createRedirectHandler,
   setCorsHeaders,
 } from './utilities/helpers/middeware';
 
 export async function middleware(request: NextRequest) {
-  // // First check for redirects
-  // const redirectResponse = handleRedirect(request);
+  // First check for redirects
+  const redirectResponse = handleRedirect(request);
 
-  // if (redirectResponse) {
-  //   return redirectResponse;
-  // }
+  if (redirectResponse) {
+    return redirectResponse;
+  }
 
   // If no redirect, proceed with normal middleware
   const response = NextResponse.next({ request });
@@ -45,53 +45,32 @@ const crossOrigins = [
   'aiconference.co.ke',
 ];
 
-// const staticRedirects = {
-//   '/contact': '/about/contact',
-//   '/stories/gallery': '/about/gallery',
-//   '/stories/blog': '/resources/blog',
-//   '/services': '/drone-solutions',
-//   '/services/light-shows': '/drone-solutions/light-shows',
-//   '/training': '/drone-training',
-//   '/training/basic': '/drone-training',
-//   '/training/advanced': '/drone-training',
-//   '/pricing/training': '/drone-training/pricing',
-//   '/help/faq': '/resources/faq',
-//   '/terms-conditions': '/legal/terms',
-//   '/privacy-policy': '/legal/policy',
-// };
+const pastEvents = {
+  yr2024: '/past-events/2024',
+};
 
-// const dynamicRedirects = [
-//   {
-//     // Matches "/stories/blog/any-title-123" and preserves the dynamic part
-//     pattern: /^\/stories\/blog\/([^\/]+)$/,
-//     replacement: '/resources/blog/$1',
-//   },
+const staticRedirects = {
+  '/': `${pastEvents.yr2024}`,
+  '/exhibit': `${pastEvents.yr2024}#exhibitors`,
+  '/program': `${pastEvents.yr2024}#program`,
+  '/speakers': `${pastEvents.yr2024}#speakers`,
+  '/sponsors': `${pastEvents.yr2024}#sponsors-partners`,
+};
 
-//   {
-//     // Matches "/stories/blog/categories/any-title-123" and preserves the dynamic part
-//     pattern: /^\/stories\/blog\/categories\/([^\/]+)$/,
-//     replacement: '/resources/blog/categories/$1',
-//   },
+const dynamicRedirects = [
+  {
+    // Matches "/speakers/any-service-title" and redirects to /drone-solutions
+    pattern: /^\/speakers\/[^\/]+$/,
+    replacement: `${pastEvents.yr2024}#speakers`,
+  },
+];
 
-//   {
-//     // Matches "/stories/blog/tags/any-title-123" and preserves the dynamic part
-//     pattern: /^\/stories\/blog\/tags\/([^\/]+)$/,
-//     replacement: '/resources/blog/tags/$1',
-//   },
-
-//   {
-//     // Matches "/services/any-service-title" and redirects to /drone-solutions
-//     pattern: /^\/services\/[^\/]+$/,
-//     replacement: '/drone-solutions',
-//   },
-// ];
-
-// const handleRedirect = createRedirectHandler(
-//   staticRedirects,
-//   dynamicRedirects,
-//   {
-//     permanent: true,
-//     preserveQuery: true,
-//     preserveHash: true,
-//   }
-// );
+const handleRedirect = createRedirectHandler(
+  staticRedirects,
+  dynamicRedirects,
+  {
+    permanent: false,
+    preserveQuery: true,
+    preserveHash: true,
+  }
+);
