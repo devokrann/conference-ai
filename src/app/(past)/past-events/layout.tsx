@@ -5,12 +5,12 @@ import appData from '@/data/app';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Past Shows',
-    template: `%s - Past Shows - ${appData.name.app}`,
+    default: 'Past Events',
+    template: `%s - Past Events - ${appData.name.app}`,
   },
 };
 
-export default function PastShows({
+export default function PastEvents({
   children, // will be a page or nested layout
 }: {
   children: React.ReactNode;
