@@ -27,12 +27,6 @@ export default function Yr2024() {
       <Stack align="center" gap={SECTION_SPACING / 1.5}>
         <Container size={'sm'}>
           <Stack align="center" gap={SECTION_SPACING / 1.5}>
-            <Text inherit fz={{ base: 'xs', xs: 'sm' }} ta={'center'}>
-              The inaugural AI Conference Nairobi, held on March 26th and 27th,
-              2024, at the Sarit Expo Centre (Loita Hall) in Nairobi, Kenya, was
-              a pivotal event in Kenya&apos;s technology landscape.
-            </Text>
-
             <ImageDefault
               src={images.brand.conference.logo.landscape.light}
               alt={'AI Conference'}
@@ -50,10 +44,16 @@ export default function Yr2024() {
             </Stack>
 
             <Text inherit fz={{ base: 'xs', xs: 'sm' }} ta={'center'}>
+              The inaugural AI Conference Nairobi, held on March 26th and 27th,
+              2024, at the Sarit Expo Centre (Loita Hall) in Nairobi, Kenya, was
+              a pivotal event in Kenya&apos;s technology landscape.
+            </Text>
+
+            {/* <Text inherit fz={{ base: 'xs', xs: 'sm' }} ta={'center'}>
               The conference convened a diverse cross-section of stakeholders to
               explore the cutting-edge applications and future implications of
               these converging technologies.
-            </Text>
+            </Text> */}
           </Stack>
         </Container>
 
@@ -95,6 +95,16 @@ export default function Yr2024() {
             ))}
           </Grid>
         </Container>
+
+        <Text
+          inherit
+          fz={{ base: 'xs', xs: 'sm' }}
+          ta={'center'}
+          tt={'uppercase'}
+          fw={'bold'}
+        >
+          Event Report
+        </Text>
       </Stack>
     </LayoutSection>
   );
@@ -114,10 +124,6 @@ const stats = [
     stat: '50+',
   },
   {
-    title: 'Hackathon Participants',
-    stat: '20',
-  },
-  {
     title: 'Exhibitor Booths',
     stat: '13',
   },
@@ -125,8 +131,8 @@ const stats = [
     title: 'Countries Represented',
     stat: '8',
   },
-  // {
-  //   title: 'Partners & Sponsors',
-  //   stat: '6',
-  // },
+  {
+    title: 'Partners & Sponsors',
+    stat: '6',
+  },
 ];

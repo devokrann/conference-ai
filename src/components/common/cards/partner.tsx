@@ -10,7 +10,13 @@ export default function Partner({
   noPadding?: boolean;
 }) {
   return (
-    <Card bg={'transparent'} padding={'lg'} h={'100%'} withBorder shadow="xs">
+    <Card
+      bg={'transparent'}
+      padding={'lg'}
+      h={'100%'}
+      shadow="xs"
+      style={{ border: '2px inset var(--mantine-color-pri-6)' }}
+    >
       <Stack>
         <Group mih={80}>
           <ImageDefault

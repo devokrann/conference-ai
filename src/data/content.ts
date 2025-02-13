@@ -1,3 +1,4 @@
+import { images } from '@/assets/images';
 import {
   IconBadgeTm,
   IconBrandAirtable,
@@ -73,31 +74,37 @@ export const content = {
 
   whoAttends: [
     {
+      image: images.gallery.conference.yr2024.image42,
       icon: IconCpu,
       title: 'Technology Enthusiasts and Professionals',
       desc: 'Individuals passionate about technology and its applications found the conference stimulating and informative.',
     },
     {
+      image: images.gallery.conference.yr2024.image136,
       icon: IconBuildingFactory,
       title: 'Industry Leaders and Decision Makers',
       desc: 'The event drew senior executives and decision-makers seeking to understand how to leverage these technologies for competitive advantage.',
     },
     {
+      image: images.gallery.conference.yr2024.image78,
       icon: IconFileTextAi,
       title: 'AI Researchers and Developers',
       desc: 'The conference offered a valuable forum for AI experts to share their latest research and connect with potential collaborators.',
     },
     {
+      image: images.gallery.conference.yr2024.image51,
       icon: IconDrone,
       title: 'Drone Technology Experts & Enthusiasts',
       desc: 'Drone enthusiasts, pilots, and manufacturers benefited from the insights and demonstrations centered around drone applications.',
     },
     {
+      image: images.gallery.conference.yr2024.image69,
       icon: IconTrendingUp,
       title: 'Startups and Entrepreneurs in Tech Space',
       desc: 'The conference provided a launchpad for early-stage tech startups to gain visibility and forge strategic connections.',
     },
     {
+      image: images.gallery.conference.yr2024.image135,
       icon: IconDatabaseSearch,
       title: 'Data Scientists and Analysts',
       desc: 'Data professionals discovered new techniques and tools for harnessing the power of data within the context of AI and drone technology.',
