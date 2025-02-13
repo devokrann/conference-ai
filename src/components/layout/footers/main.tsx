@@ -1,7 +1,5 @@
 import React from 'react';
-
-import Link from 'next/link';
-
+// import Link from 'next/link';
 import {
   Flex,
   Grid,
@@ -15,11 +13,8 @@ import {
   ListItem,
   Stack,
 } from '@mantine/core';
-
 import LayoutSection from '@/components/layout/section';
-
 import { images } from '@/assets/images';
-
 import classes from './main.module.scss';
 import appData from '@/data/app';
 import { socials } from '@/data/social';
@@ -46,7 +41,10 @@ export default function Main() {
               justify={{ base: 'center', md: 'start' }}
               gap={'xl'}
             >
-              <Anchor component={Link} href={'/'}>
+              <Anchor
+                // component={Link}
+                href={'/'}
+              >
                 <ImageDefault
                   src={images.brand.conference.logo.landscape.light}
                   alt={appData.name.app}
@@ -86,7 +84,7 @@ export default function Main() {
                       {linkSet.links.map((link) => (
                         <ListItem key={link.link} className={classes.listItem}>
                           <Anchor
-                            component={Link}
+                            // component={Link}
                             href={link.link}
                             title={link.label}
                             className={classes.link}
