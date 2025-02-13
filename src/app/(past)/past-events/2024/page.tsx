@@ -42,7 +42,7 @@ export default function Yr2024() {
 
         <Grid justify="center">
           {content.objectives.map((objective) => (
-            <GridCol key={objective.title} span={{ base: 12, sm: 6, md: 4 }}>
+            <GridCol key={objective.title} span={{ base: 12, xs: 6, md: 4 }}>
               <CardObjective data={objective} />
             </GridCol>
           ))}
@@ -61,7 +61,7 @@ export default function Yr2024() {
 
         <Grid justify="center">
           {content.whoAttends.map((item) => (
-            <GridCol key={item.title} span={{ base: 12, sm: 6, md: 4 }}>
+            <GridCol key={item.title} span={{ base: 12, xs: 6, md: 4 }}>
               <CardAudience data={item} />
             </GridCol>
           ))}
@@ -120,7 +120,7 @@ export default function Yr2024() {
         />
 
         <Grid>
-          <GridCol span={{ base: 12, sm: 6 }}>
+          <GridCol span={{ base: 12, md: 6 }}>
             <Stack gap={'xl'}>
               <Title ta={'center'} order={3} fz={'xl'}>
                 26<sup>th</sup> March, 2024 (Day I)
@@ -128,7 +128,8 @@ export default function Yr2024() {
               <AccordionProgram data={program.schedule.day1} />
             </Stack>
           </GridCol>
-          <GridCol span={{ base: 12, sm: 6 }}>
+
+          <GridCol span={{ base: 12, md: 6 }}>
             <Stack gap={'xl'}>
               <Title ta={'center'} order={3} fz={'xl'}>
                 27<sup>th</sup> March, 2024 (Day II)
@@ -151,13 +152,13 @@ export default function Yr2024() {
 
         <Grid>
           {partners.map((partner, index) => (
-            <GridCol key={index} span={{ base: 6, sm: 4 }}>
+            <GridCol key={index} span={{ base: 12, xs: 6, md: 4 }}>
               <CardPartner data={partner} />
             </GridCol>
           ))}
 
           {sponsorship.sponsors.map((partner, index) => (
-            <GridCol key={index} span={{ base: 6, sm: 4 }}>
+            <GridCol key={index} span={{ base: 12, xs: 6, md: 4 }}>
               <CardSponsor data={partner} />
             </GridCol>
           ))}

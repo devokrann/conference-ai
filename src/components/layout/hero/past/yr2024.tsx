@@ -60,7 +60,7 @@ export default function Yr2024() {
         <Container size={'md'}>
           <Grid gutter={'lg'} justify="center">
             {stats.map((stat, index) => (
-              <GridCol key={index} span={{ md: 2 }}>
+              <GridCol key={index} span={{ base: 6, xs: 4, sm: 3, md: 2 }}>
                 <Card
                   bg={'var(--mantine-color-pri-light)'}
                   padding={'xs'}
@@ -73,7 +73,13 @@ export default function Yr2024() {
                 >
                   <Stack gap={'xs'} ta={'center'}>
                     <Group justify="center">
-                      <Title order={3} fz={'md'} fw={500} c={'white'} w={'90%'}>
+                      <Title
+                        order={3}
+                        fz={'md'}
+                        fw={500}
+                        c={'white'}
+                        w={{ base: '80%', xs: '70%', md: '90%' }}
+                      >
                         {stat.title}
                       </Title>
                     </Group>
