@@ -36,7 +36,6 @@ import { cookies } from 'next/headers';
 // import AffixOffline from '@/components/common/affixi/offline';
 // import AffixiCookies from '@/components/common/affixi/cookies';
 // import { SpeedInsights } from "@vercel/speed-insights/next";
-import AffixWhatsApp from '@/components/common/affixi/whatsapp';
 import AffixNavbar from '@/components/common/affixi/navbar';
 import AffixTop from '@/components/common/affixi/top';
 
@@ -94,7 +93,6 @@ export default async function RootLayout({
 
             <AffixTop />
             <AffixNavbar />
-            <AffixWhatsApp />
             {/* <AffixOffline /> */}
             {/* <AffixiCookies /> */}
           </MantineProvider>
