@@ -1,18 +1,14 @@
 'use client';
 
 import React from 'react';
-
-import Link from 'next/link';
-
+// import Link from 'next/link';
 import { Group, Anchor, Grid, GridCol } from '@mantine/core';
-
 import LayoutSection from '@/components/layout/section';
 import DrawerNavbarMain from '@/components/common/drawers/navbar/main';
 import MenuNavbar from '@/components/common/menus/navbar';
 // import MenuAvatar from '@/components/common/menus/avatar';
 // import DrawerUser from '@/components/common/drawers/user';
 // import { SignIn as FragmentSignIn } from '@/components/common/fragments/auth';
-
 import classes from './main.module.scss';
 import { IconChevronDown } from '@tabler/icons-react';
 import { ICON_SIZE, ICON_STROKE_WIDTH } from '@/data/constants';
@@ -39,7 +35,7 @@ export default function Main({
     <MenuNavbar key={link.link} subLinks={link.subLinks}>
       {!link.subLinks ? (
         <Anchor
-          component={Link}
+          // component={Link}
           href={link.link}
           className={`${options?.absolute ? classes.linkAbsolute : classes.link} ${
             matchesPath(link.link) ? classes.linkActive : ''
@@ -49,7 +45,7 @@ export default function Main({
         </Anchor>
       ) : (
         <Anchor
-          component={Link}
+          // component={Link}
           href={link.link}
           className={`${options?.absolute ? classes.linkAbsolute : classes.link} ${
             matchesPath(link.link) ? classes.linkActive : ''
@@ -59,7 +55,7 @@ export default function Main({
           <Group gap={4}>
             <span>{link.label}</span>
             <IconChevronDown
-              size={ICON_SIZE}
+              size={ICON_SIZE / 1.5}
               stroke={ICON_STROKE_WIDTH}
               style={{ marginTop: 2 }}
             />
@@ -70,7 +66,10 @@ export default function Main({
   ));
 
   const imageBrand = (
-    <Anchor component={Link} href={'/'}>
+    <Anchor
+      // component={Link}
+      href={'/'}
+    >
       <ImageDefault
         src={images.brand.conference.logo.landscape.light}
         alt={appData.name.app}
@@ -126,6 +125,6 @@ const links = {
     { link: '/program', label: 'Program' },
     { link: '/speakers', label: 'Speakers' },
     { link: '/sponsors', label: 'Sponsorship' },
-    { link: '/gallery', label: 'Gallery' },
+    { link: '/past-events/2024', label: '2024 Event' },
   ],
 };
