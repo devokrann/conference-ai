@@ -19,6 +19,7 @@ export default function Gallery({ props }: { props: { list: any[] } }) {
     if (activePage > 1) {
       router.push('#gallery');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activePage]);
 
   return (

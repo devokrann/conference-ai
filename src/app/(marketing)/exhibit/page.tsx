@@ -96,7 +96,7 @@ export default async function Exhibit() {
           </Title>
           <Grid>
             {exhibition.exhibitors.map((exhibitor) => (
-              <GridCol span={{ base: 6, xs: 4, md: 3 }} key={exhibitor.name}>
+              <GridCol span={{ base: 6, xs: 4, md: 3 }} key={exhibitor.title}>
                 <CardSponsor data={exhibitor} />
               </GridCol>
             ))}
