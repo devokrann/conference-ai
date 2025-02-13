@@ -53,6 +53,7 @@ export const usePaginate = <T>(list: T[], pageSize: number) => {
         ? list.length
         : Math.min(activePage * pageSize, list.length),
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chunkedList.length, activePage, list.length, pageSize]);
 
   return {
